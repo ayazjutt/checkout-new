@@ -160,13 +160,15 @@
                                 @if ($step['status'] === 'complete')
                                 @if ($stepIdx !== count($steps) - 1)
                                 <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-[#8E5D0B]"
-                                    aria-hidden="true"></div>
+                                    aria-hidden="true">
+
+                                </div>
                                 @endif
                                 <a href="{{ $step['href'] }}" class="group relative flex items-start">
                                     <span class="flex h-9 items-center">
                                         <span
-                                            class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#8E5D0B] group-hover:bg-indigo-800">
-                                            {{-- You need to replace CheckIcon with an equivalent HTML or Blade component --}}
+                                            class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#8E5D0B]">
+                                            <img src='assets/images/check.svg' class="w-5" />
                                         </span>
                                     </span>
                                     <span class="ml-4 flex min-w-0 flex-col">
@@ -181,14 +183,14 @@
                                 @elseif ($step['status'] === 'current')
 
                                 @if ($stepIdx !== count($steps) - 1)
-                                <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-[#8E5D0B]"
+                                <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-[#626262]"
                                     aria-hidden="true"></div>
                                 @endif
                                 <a href="{{ $step['href'] }}" class="group relative flex items-start">
                                     <span class="flex h-9 items-center">
                                         <span
-                                            class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#8E5D0B] group-hover:bg-indigo-800">
-                                            {{-- You need to replace CheckIcon with an equivalent HTML or Blade component --}}
+                                            class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#8E5D0B]">
+                                            2
                                         </span>
                                     </span>
                                     <span class="ml-4 flex min-w-0 flex-col">
@@ -203,14 +205,14 @@
                                 @else
 
                                 @if ($stepIdx !== count($steps) - 1)
-                                <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-[#8E5D0B]"
+                                <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-[#626262]"
                                     aria-hidden="true"></div>
                                 @endif
                                 <a href="{{ $step['href'] }}" class="group relative flex items-start">
                                     <span class="flex h-9 items-center">
                                         <span
-                                            class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#8E5D0B] group-hover:bg-indigo-800">
-                                            {{-- You need to replace CheckIcon with an equivalent HTML or Blade component --}}
+                                            class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#626262]">
+                                            3
                                         </span>
                                     </span>
                                     <span class="ml-4 flex min-w-0 flex-col">
@@ -241,8 +243,8 @@
                         <p class='font-sans font-normal text-xs text-[#FFFFFF]'>A short details for company type. </p>
 
                     </div>
-                    <div class="bg-gray-400 mt-6 p-6 rounded-xl">
-                        <p class="font-sans text-lg font-bold text-[#52525b] mb-4">
+                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
+                        <p class="font-sans text-lg font-bold text-white mb-4">
                             Setup Service
                         </p>
                         <div class="grid grid-cols-2 gap-x-10 gap-y-4">
@@ -279,14 +281,14 @@
                                 </label>
                                 <div class="selectWrapper">
                                     <select class="selectBox">
-                                    <option>Value 1</option>
-                                    <option>Value 2</option>
-                                    <option>Value 3</option>
-                                    <option>Value 4</option>
-                                    <option>Value 5</option>
-                                    <option>Value 6</option>
-                                </select>
-                              </div>
+                                        <option>Value 1</option>
+                                        <option>Value 2</option>
+                                        <option>Value 3</option>
+                                        <option>Value 4</option>
+                                        <option>Value 5</option>
+                                        <option>Value 6</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <div class="flex flex-col space-y-1">
@@ -295,14 +297,14 @@
                                 </label>
                                 <div class="selectWrapper">
                                     <select class="selectBox">
-                                    <option>Value 1</option>
-                                    <option>Value 2</option>
-                                    <option>Value 3</option>
-                                    <option>Value 4</option>
-                                    <option>Value 5</option>
-                                    <option>Value 6</option>
-                                </select>
-                              </div>
+                                        <option>Value 1</option>
+                                        <option>Value 2</option>
+                                        <option>Value 3</option>
+                                        <option>Value 4</option>
+                                        <option>Value 5</option>
+                                        <option>Value 6</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <div class="flex flex-col space-y-2">
@@ -315,10 +317,10 @@
                         </div>
                     </div>
 
-                    
-                    <div class="bg-gray-400 mt-6 p-6 rounded-xl">
+
+                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
                         <div class="flex items-center justify-between mb-4">
-                            <p class="font-sans text-lg font-bold text-[#52525b]">
+                            <p class="font-sans text-lg font-bold text-[#5white">
                                 Recommended Services
                             </p>
                         </div>
@@ -330,21 +332,21 @@
                                 </label>
                                 <div class="selectWrapper">
                                     <select class="selectBox">
-                                    <option>Value 1</option>
-                                    <option>Value 2</option>
-                                    <option>Value 3</option>
-                                    <option>Value 4</option>
-                                    <option>Value 5</option>
-                                    <option>Value 6</option>
-                                </select>
-                              </div>
+                                        <option>Value 1</option>
+                                        <option>Value 2</option>
+                                        <option>Value 3</option>
+                                        <option>Value 4</option>
+                                        <option>Value 5</option>
+                                        <option>Value 6</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="bg-gray-400 mt-6 p-6 rounded-xl">
+
+                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
                         <div class="flex items-center justify-between">
-                            <p class="font-sans text-lg font-bold text-[#52525b]">
+                            <p class="font-sans text-lg font-bold text-[#5white">
                                 Processing Time
                             </p>
                         </div>
@@ -383,8 +385,8 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="bg-gray-400 mt-6 p-6 rounded-xl">
+
+                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
                         <div class="flex items-center justify-between"></div>
                         <div class="grid grid-cols-2 gap-4">
                             <div class="flex flex-col space-y-1">
@@ -393,34 +395,28 @@
                                 </label>
                                 <div class="selectWrapper">
                                     <select class="selectBox">
-                                    <option>Value 1</option>
-                                    <option>Value 2</option>
-                                    <option>Value 3</option>
-                                    <option>Value 4</option>
-                                    <option>Value 5</option>
-                                    <option>Value 6</option>
-                                </select>
-                              </div>
+                                        <option>Value 1</option>
+                                        <option>Value 2</option>
+                                        <option>Value 3</option>
+                                        <option>Value 4</option>
+                                        <option>Value 5</option>
+                                        <option>Value 6</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="flex items-center justify-end">
-                        <button type="button"
-                            class="text-sm font-medium py-1.5 px-4 w-40 rounded-md bg-[#07c553] text-white mt-4">
-                            Next Step
-                        </button>
                     </div>
 
                 </div> -->
 
                 <!-- ====================== STEP 2 ====================== -->
 
-                <!-- <div class="w-3/5 bg-white py-14 px-20  shadow-md bg-cover bg-center"
+                <div class="w-3/5 bg-white py-14 px-20  shadow-md bg-cover bg-center"
                     style="background-image: url('assets/images/MainSectionBgImage.png');">
                     <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Company & Owner Details</p>
                     <p class='font-sans font-normal text-xs text-[#FFFFFF]'>A short details for company type. </p>
 
-                    <div class="bg-gray-400 mt-6 p-6 rounded-xl">
+                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
                         <div class="grid grid-cols-2 gap-x-10 gap-y-4">
                             <div class="flex flex-col space-y-1">
                                 <label class="font-sans text-sm font-normal text-[#606266]">
@@ -446,10 +442,10 @@
                         </div>
                     </div>
 
-                    <div class="bg-gray-400 mt-6 p-6 rounded-xl">
+                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
                         <div class="flex items-center justify-between mb-4">
                             <div class="flex items-center justify-between w-full">
-                                <p class="font-sans text-lg font-bold text-[#52525b]">
+                                <p class="font-sans text-lg font-bold text-[#5white">
                                     Shareholder Information
                                 </p>
                             </div>
@@ -497,11 +493,10 @@
                         </div>
                     </div>
 
-
-                    <div class="bg-gray-400 mt-6 p-6 rounded-xl">
+                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
                         <div class="flex items-center justify-between mb-4">
                             <div class="flex items-center justify-between w-full">
-                                <p class="font-sans text-lg font-bold text-[#52525b]">
+                                <p class="font-sans text-lg font-bold text-[#5white">
                                     Beneficial Owner
                                 </p>
 
@@ -546,115 +541,107 @@
                         </div>
                     </div>
 
+                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center justify-between w-full">
+                                <p class="font-sans text-lg font-bold text-[#5white">
+                                    Billing Details
+                                </p>
+                            </div>
+                        </div>
 
-                    
-                    <div class="bg-gray-400 mt-6 p-6 rounded-xl">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center justify-between w-full">
-                            <p class="font-sans text-lg font-bold text-[#52525b]">
-                                Billing Details
-                            </p>
+                        <div class="grid grid-cols-2 gap-x-10 gap-y-4">
+                            <div class="flex flex-col space-y-1">
+                                <label class="font-sans text-sm font-normal text-[#606266]">
+                                    Full Name
+                                </label>
+                                <input type="text" name="fullName" id="fullName"
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+
+                            <div class="flex flex-col space-y-1">
+                                <label class="font-sans text-sm font-normal text-[#606266]">
+                                    Email Address
+                                </label>
+                                <input type="text" name="emailAddress" id="emailAddress"
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+
+                            <div class="flex flex-col space-y-1">
+                                <label class="font-sans text-sm font-normal text-[#606266]">
+                                    Personal Number
+                                </label>
+                                <input type="text" name="personalNumber" id="personalNumber"
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+
+                            <div class="flex flex-col space-y-1">
+                                <label class="font-sans text-sm font-normal text-[#606266]">
+                                    Address 1
+                                </label>
+                                <input type="text" name="address" id="address"
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+
+                            <div class="flex flex-col space-y-1">
+                                <label class="font-sans text-sm font-normal text-[#606266]">
+                                    Address 2
+                                </label>
+                                <input type="text" name="address" id="address"
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+
+                            <div class="flex flex-col space-y-1">
+                                <label class="font-sans text-sm font-normal text-[#606266]">
+                                    City
+                                </label>
+                                <input type="text" name="address" id="address"
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+
+                            <div class="flex flex-col space-y-1">
+                                <label class="font-sans text-sm font-normal text-[#606266]">
+                                    Country
+                                </label>
+                                <input type="text" name="address" id="address"
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+
+                            <div class="flex flex-col space-y-1">
+                                <label class="font-sans text-sm font-normal text-[#606266]">
+                                    Zip Code
+                                </label>
+                                <input type="text" name="address" id="address"
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-x-10 gap-y-4">
-                        <div class="flex flex-col space-y-1">
-                            <label class="font-sans text-sm font-normal text-[#606266]">
-                                Full Name
-                            </label>
-                            <input type="text" name="fullName" id="fullName"
-                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center justify-between w-full">
+                                <p class="font-sans text-lg font-bold text-[#5white">
+                                    Special Request
+                                </p>
+                            </div>
                         </div>
 
-                        <div class="flex flex-col space-y-1">
-                            <label class="font-sans text-sm font-normal text-[#606266]">
-                                Email Address
-                            </label>
-                            <input type="text" name="emailAddress" id="emailAddress"
-                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                        </div>
-
-                        <div class="flex flex-col space-y-1">
-                            <label class="font-sans text-sm font-normal text-[#606266]">
-                                Personal Number
-                            </label>
-                            <input type="text" name="personalNumber" id="personalNumber"
-                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                        </div>
-
-                        <div class="flex flex-col space-y-1">
-                            <label class="font-sans text-sm font-normal text-[#606266]">
-                                Address 1
-                            </label>
-                            <input type="text" name="address" id="address"
-                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                        </div>
-
-                        <div class="flex flex-col space-y-1">
-                            <label class="font-sans text-sm font-normal text-[#606266]">
-                                Address 2
-                            </label>
-                            <input type="text" name="address" id="address"
-                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                        </div>
-
-                        <div class="flex flex-col space-y-1">
-                            <label class="font-sans text-sm font-normal text-[#606266]">
-                                City
-                            </label>
-                            <input type="text" name="address" id="address"
-                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                        </div>
-
-                        <div class="flex flex-col space-y-1">
-                            <label class="font-sans text-sm font-normal text-[#606266]">
-                                Country
-                            </label>
-                            <input type="text" name="address" id="address"
-                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                        </div>
-
-                        <div class="flex flex-col space-y-1">
-                            <label class="font-sans text-sm font-normal text-[#606266]">
-                                Zip Code
-                            </label>
-                            <input type="text" name="address" id="address"
-                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                        </div>
-                    </div>
-                              </div>
-
-                    <div class="bg-gray-400 mt-6 p-6 rounded-xl">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center justify-between w-full">
-                            <p class="font-sans text-lg font-bold text-[#52525b]">
-                                Special Request
-                            </p>
+                        <div class="grid grid-cols-1">
+                            <div class="flex flex-col space-y-1">
+                                <textarea
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 px-2 py-1.5 text-gray-900 h-20 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1">
-                        <div class="flex flex-col space-y-1">
-                            <textarea
-                                class="block w-full rounded-md bg-[#F6F6F699] border-0 px-2 py-1.5 text-gray-900 h-20 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
-                        </div>
-                    </div>
-                              </div>
-
-                    <div class="flex items-center justify-end">
-                        <button type="button"
-                            class="text-sm font-medium py-1.5 px-4 w-40 rounded-md bg-[#07c553] text-white mt-4">
-                            Next Step
-                        </button>
-                    </div>
-                </div> -->
+                </div>
 
                 <!-- ====================== STEP 3 ====================== -->
 
                 <!-- <div class="w-3/5 bg-white py-14 px-20  shadow-md bg-cover bg-center h-full"
                     style="background-image: url('assets/images/MainSectionBgImage.png');">
                     <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Step:1</p>
-                    <div class="bg-gray-400 mt-6 p-6 rounded-xl">
+                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
                         <div class="grid grid-cols-12 gap-5">
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
                                 <p class='font-sans font-medium text-[10px] text-[#343434]'>Type of Service:</p>
@@ -696,7 +683,7 @@
                     </div>
 
                     <p class='font-sans font-semibold text-[28px] text-[#C8C8C8] mt-4'>Step:2</p>
-                    <div class="bg-gray-400 mt-6 p-6 rounded-xl">
+                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
 
                         <div class="grid grid-cols-12 gap-5">
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
@@ -889,7 +876,7 @@
 
                 <!-- ====================== STEP 5 ====================== -->
 
-                <div class="w-3/5 bg-white py-14 px-20  shadow-md bg-cover bg-center h-full"
+                <!-- <div class="w-3/5 bg-white py-14 px-20  shadow-md bg-cover bg-center h-full"
                     style="background-image: url('assets/images/MainSectionBgImage.png');">
                     <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Payment</p>
                     <div class="bg-[#626262] mt-6 mb-6 p-6 rounded-xl">
@@ -948,131 +935,132 @@
                     </div>
 
 
-                </div>
+                </div> -->
 
 
 
 
-                <div class="w-1/5 sticky top-0 right-0 px-5 pt-[115px] shadow-md bg-cover bg-center" style="background-image: url('assets/images/rightSidebarBgImage.png');>
+                <div class="w-1/5 sticky top-0 right-0 px-5 pt-[115px] shadow-md bg-cover bg-center"
+                    style="background-image: url('assets/images/rightSidebarBgImage.png');">
                     <div class=" px-5">
-                    <p class="font-sans text-xl font-semibold text-[#292929]">
-                        Total pay
-                    </p>
-                    <p class="font-sans text-[40px] font-bold text-[#8E5D0B]">
-                        $700
-                    </p>
-                    <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
-                        <p class="font-sans text-sm font-bold text-[#292929]">
-                            Type of service
+                        <p class="font-sans text-xl font-semibold text-[#292929]">
+                            Total pay
                         </p>
-                        <p class="font-sans text-sm font-medium text-[#292929]">
-                            UK COMPANY REGISTRATION
+                        <p class="font-sans text-[40px] font-bold text-[#8E5D0B]">
+                            $700
                         </p>
-                    </div>
-                    <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
-                        <p class="font-sans text-sm font-bold text-[#292929]">
-                            Jurisdiction of incorporation
-                        </p>
-                        <p class="font-sans text-sm font-medium text-[#292929]">
-                            Canada
-                        </p>
-                    </div>
-
-                    <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
-                        <p class="font-sans text-sm font-bold text-[#292929]">
-                            Number of Shareholders:
-                        </p>
-                        <p class="font-sans text-sm font-medium text-[#292929]">
-                            3
-                        </p>
-                    </div>
-
-                    <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
-                        <p class="font-sans text-sm font-bold text-[#292929]">
-                            Corporation Type:
-                        </p>
-                        <p class="font-sans text-sm font-medium text-[#292929]">
-                            LLC
-                        </p>
-                    </div>
-
-                    <div class="mt-3">
-                        <p class="font-sans text-sm font-bold text-[#292929]">
-                            Extra Services:
-                        </p>
-                        <div class="flex items-center justify-between  border-b border-[#1A1A1A] pb-1 mt-2">
-                            <p class="font-sans text-sm font-medium text-[#292929] ml-4">
-                                Limited:
-                            </p>
-                            <p class="font-sans text-sm font-medium text-[#292929]">
-                                $150
-                            </p>
-                        </div>
-
-
-
                         <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
                             <p class="font-sans text-sm font-bold text-[#292929]">
-                                Address
+                                Type of service
                             </p>
                             <p class="font-sans text-sm font-medium text-[#292929]">
-                                $100
+                                UK COMPANY REGISTRATION
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
+                            <p class="font-sans text-sm font-bold text-[#292929]">
+                                Jurisdiction of incorporation
+                            </p>
+                            <p class="font-sans text-sm font-medium text-[#292929]">
+                                Canada
                             </p>
                         </div>
 
                         <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
                             <p class="font-sans text-sm font-bold text-[#292929]">
+                                Number of Shareholders:
+                            </p>
+                            <p class="font-sans text-sm font-medium text-[#292929]">
+                                3
+                            </p>
+                        </div>
+
+                        <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
+                            <p class="font-sans text-sm font-bold text-[#292929]">
+                                Corporation Type:
+                            </p>
+                            <p class="font-sans text-sm font-medium text-[#292929]">
                                 LLC
                             </p>
-                            <p class="font-sans text-sm font-medium text-[#292929]">
-                                $100
-                            </p>
                         </div>
 
-                        <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
+                        <div class="mt-3">
                             <p class="font-sans text-sm font-bold text-[#292929]">
-                                TAX
+                                Extra Services:
                             </p>
-                            <p class="font-sans text-sm font-medium text-[#292929]">
-                                $100
-                            </p>
+                            <div class="flex items-center justify-between  border-b border-[#1A1A1A] pb-1 mt-2">
+                                <p class="font-sans text-sm font-medium text-[#292929] ml-4">
+                                    Limited:
+                                </p>
+                                <p class="font-sans text-sm font-medium text-[#292929]">
+                                    $150
+                                </p>
+                            </div>
+
+
+
+                            <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
+                                <p class="font-sans text-sm font-bold text-[#292929]">
+                                    Address
+                                </p>
+                                <p class="font-sans text-sm font-medium text-[#292929]">
+                                    $100
+                                </p>
+                            </div>
+
+                            <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
+                                <p class="font-sans text-sm font-bold text-[#292929]">
+                                    LLC
+                                </p>
+                                <p class="font-sans text-sm font-medium text-[#292929]">
+                                    $100
+                                </p>
+                            </div>
+
+                            <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
+                                <p class="font-sans text-sm font-bold text-[#292929]">
+                                    TAX
+                                </p>
+                                <p class="font-sans text-sm font-medium text-[#292929]">
+                                    $100
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
+                                <p class="font-sans text-sm font-bold text-[#292929]">
+                                    Processing Type:
+                                </p>
+                                <p class="font-sans text-sm font-medium text-[#292929]">
+                                    $500
+                                </p>
+                            </div>
                         </div>
-                        <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
-                            <p class="font-sans text-sm font-bold text-[#292929]">
-                                Processing Type:
-                            </p>
-                            <p class="font-sans text-sm font-medium text-[#292929]">
-                                $500
-                            </p>
-                        </div>
-                    </div>
 
-                    <div class="flex items-center justify-between mt-8">
-                        <button type="button"
-                            class="bg-white rounded-lg text-[#FF0000] text-sm font-bold py-2 px-8 flex items-center space-x-2">
-                            <img src='assets/images/left-arrow.svg' alt="Logo" class="" />
-                            <span>Back</span>
-                        </button>
+                        <div class="flex items-center justify-between mt-8">
+                            <button type="button"
+                                class="bg-white rounded-lg text-[#FF0000] text-sm font-bold py-2 px-8 flex items-center space-x-2">
+                                <img src='assets/images/left-arrow.svg' alt="Logo" class="" />
+                                <span>Back</span>
+                            </button>
 
-                        <button type="button"
-                            class="bg-[#8E5D0B] rounded-lg text-white text-sm font-bold py-2 px-8 flex items-center space-x-2">
-                            <span>Next</span>
-                            <img src='assets/images/right-arrow.svg' alt="Logo" class="" />
+                            <button type="button"
+                                class="bg-[#8E5D0B] rounded-lg text-white text-sm font-bold py-2 px-8 flex items-center space-x-2">
+                                <span>Next</span>
+                                <img src='assets/images/right-arrow.svg' alt="Logo" class="" />
 
-                        </button>
+                            </button>
 
-                        <!-- <button type="button"
+                            <!-- <button type="button"
                             class="bg-[#8E5D0B] rounded-lg text-white text-sm font-bold py-2 px-8 flex items-center space-x-2">
                             <span>Proceed</span>
                             <img src='assets/images/right-arrow.svg' alt="Logo" class="" />
 
                         </button> -->
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
     </div>
 
 
