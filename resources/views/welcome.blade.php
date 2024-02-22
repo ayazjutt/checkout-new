@@ -36,119 +36,204 @@
         <div class="bg-[#0000001A] h-full">
             <div class="flex relative h-full">
 
-                <div class="w-1/5 sticky top-0 left-0 flex flex-col items-center px-10 py-6 bg-cover bg-center left-sidebar-bg"
+                <div class="w-1/5 sticky top-0 left-0 flex flex-col items-center px-10 bg-cover bg-center left-sidebar-bg"
                     style="background-image: url('assets/images/leftSidebarBgImage.png');">
-                    <div class="flex items-center justify-center pt-4 pb-8 w-full">
+                    <div class="flex items-center justify-center pt-4 pb-[70px] w-full">
                         <img src='assets/images/logo.png' alt="Logo" class="w-20" />
 
                     </div>
                     <!-- <nav aria-label="Progress" class="self-center">
-                    <ol role="list" class="overflow-hidden">
-                      {steps.map((step, stepIdx) => (
-                        <li
-                          key={step.name}
-                          class={classNames(
-                            stepIdx !== steps.length - 1 ? "pb-10" : "",
-                            "relative"
-                          )}
-                        >
-                          {step.status === "complete" ? (
-                            <>
-                              {stepIdx !== steps.length - 1 ? (
-                                <div
-                                  class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-indigo-600"
-                                  aria-hidden="true"
-                                />
-                              ) : null}
-                              <a
-                                href={step.href}
-                                class="group relative flex items-start"
-                              >
-                                <span class="flex h-9 items-center">
-                                  <span class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 group-hover:bg-indigo-800">
-                                    <CheckIcon
-                                      class="h-5 w-5 text-white"
-                                      aria-hidden="true"
-                                    />
-                                  </span>
-                                </span>
-                                <span class="ml-4 flex min-w-0 flex-col">
-                                  <span class="text-sm font-medium">
-                                    {step.name}
-                                  </span>
-                                  <span class="text-sm text-gray-500">
-                                    {step.description}
-                                  </span>
-                                </span>
-                              </a>
-                            </>
-                          ) : step.status === "current" ? (
-                            <>
-                              {stepIdx !== steps.length - 1 ? (
-                                <div
-                                  class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-gray-300"
-                                  aria-hidden="true"
-                                />
-                              ) : null}
-                              <a
-                                href={step.href}
-                                class="group relative flex items-start"
-                                aria-current="step"
-                              >
-                                <span
-                                  class="flex h-9 items-center"
-                                  aria-hidden="true"
-                                >
-                                  <span class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full border-2 border-indigo-600 bg-white">
-                                    <span class="h-2.5 w-2.5 rounded-full bg-indigo-600" />
-                                  </span>
-                                </span>
-                                <span class="ml-4 flex min-w-0 flex-col">
-                                  <span class="text-sm font-medium text-indigo-600">
-                                    {step.name}
-                                  </span>
-                                  <span class="text-sm text-gray-500">
-                                    {step.description}
-                                  </span>
-                                </span>
-                              </a>
-                            </>
-                          ) : (
-                            <>
-                              {stepIdx !== steps.length - 1 ? (
-                                <div
-                                  class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-gray-300"
-                                  aria-hidden="true"
-                                />
-                              ) : null}
-                              <a
-                                href={step.href}
-                                class="group relative flex items-start"
-                              >
-                                <span
-                                  class="flex h-9 items-center"
-                                  aria-hidden="true"
-                                >
-                                  <span class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-300 bg-white group-hover:border-gray-400">
-                                    <span class="h-2.5 w-2.5 rounded-full bg-transparent group-hover:bg-gray-300" />
-                                  </span>
-                                </span>
-                                <span class="ml-4 flex min-w-0 flex-col">
-                                  <span class="text-sm font-medium text-gray-500">
-                                    {step.name}
-                                  </span>
-                                  <span class="text-sm text-gray-500">
-                                    {step.description}
-                                  </span>
-                                </span>
-                              </a>
-                            </>
-                          )}
-                        </li>
-                      ))}
-                    </ol>
-                  </nav>  -->
+                        <ol role="list" class="overflow-hidden">
+                            {steps.map((step, stepIdx) => (
+                            <li key={step.name} class={classNames( stepIdx !==steps.length - 1 ? "pb-10" : ""
+                                , "relative" )}>
+                                {step.status === "complete" ? (
+                                <>
+                                    {stepIdx !== steps.length - 1 ? (
+                                    <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-indigo-600"
+                                        aria-hidden="true" />
+                                    ) : null}
+                                    <a href={step.href} class="group relative flex items-start">
+                                        <span class="flex h-9 items-center">
+                                            <span
+                                                class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 group-hover:bg-indigo-800">
+                                                <CheckIcon class="h-5 w-5 text-white" aria-hidden="true" />
+                                            </span>
+                                        </span>
+                                        <span class="ml-4 flex min-w-0 flex-col">
+                                            <span class="text-sm font-medium">
+                                                {step.name}
+                                            </span>
+                                            <span class="text-sm text-gray-500">
+                                                {step.description}
+                                            </span>
+                                        </span>
+                                    </a>
+                                </>
+                                ) : step.status === "current" ? (
+                                <>
+                                    {stepIdx !== steps.length - 1 ? (
+                                    <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-gray-300"
+                                        aria-hidden="true" />
+                                    ) : null}
+                                    <a href={step.href} class="group relative flex items-start" aria-current="step">
+                                        <span class="flex h-9 items-center" aria-hidden="true">
+                                            <span
+                                                class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full border-2 border-indigo-600 bg-white">
+                                                <span class="h-2.5 w-2.5 rounded-full bg-indigo-600" />
+                                            </span>
+                                        </span>
+                                        <span class="ml-4 flex min-w-0 flex-col">
+                                            <span class="text-sm font-medium text-indigo-600">
+                                                {step.name}
+                                            </span>
+                                            <span class="text-sm text-gray-500">
+                                                {step.description}
+                                            </span>
+                                        </span>
+                                    </a>
+                                </>
+                                ) : (
+                                <>
+                                    {stepIdx !== steps.length - 1 ? (
+                                    <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-gray-300"
+                                        aria-hidden="true" />
+                                    ) : null}
+                                    <a href={step.href} class="group relative flex items-start">
+                                        <span class="flex h-9 items-center" aria-hidden="true">
+                                            <span
+                                                class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-300 bg-white group-hover:border-gray-400">
+                                                <span
+                                                    class="h-2.5 w-2.5 rounded-full bg-transparent group-hover:bg-gray-300" />
+                                            </span>
+                                        </span>
+                                        <span class="ml-4 flex min-w-0 flex-col">
+                                            <span class="text-sm font-medium text-gray-500">
+                                                {step.name}
+                                            </span>
+                                            <span class="text-sm text-gray-500">
+                                                {step.description}
+                                            </span>
+                                        </span>
+                                    </a>
+                                </>
+                                )}
+                            </li>
+                            ))}
+                        </ol>
+                    </nav> -->
+
+                    <?php 
+                    $steps = [
+                        [
+                            "name" => "Company Type",
+                            "description" => "Vitae sed mi luctus laoreet.",
+                            "href" => "#",
+                            "status" => "complete"
+                        ],
+                        [
+                            "name" => "Company & Owner Details",
+                            "description" => "Cursus semper viverra facilisis et et some more.",
+                            "href" => "#",
+                            "status" => "current"
+                        ],
+                        [
+                            "name" => "Preview",
+                            "description" => "Penatibus eu quis ante.",
+                            "href" => "#",
+                            "status" => "upcoming"
+                        ],
+                        [
+                            "name" => "Payment",
+                            "description" => "Faucibus nec enim leo et.",
+                            "href" => "#",
+                            "status" => "upcoming"
+                        ]
+                    ];
+                    ?>
+
+
+                    <nav aria-label="Progress" class="self-center">
+                        <ol role="list" class="overflow-hidden">
+                            @foreach ($steps as $stepIdx => $step)
+                            <li class="{{ $stepIdx !== count($steps) - 1 ? 'pb-10' : '' }} relative">
+                                @if ($step['status'] === 'complete')
+                                @if ($stepIdx !== count($steps) - 1)
+                                <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-[#8E5D0B]"
+                                    aria-hidden="true"></div>
+                                @endif
+                                <a href="{{ $step['href'] }}" class="group relative flex items-start">
+                                    <span class="flex h-9 items-center">
+                                        <span
+                                            class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#8E5D0B] group-hover:bg-indigo-800">
+                                            {{-- You need to replace CheckIcon with an equivalent HTML or Blade component --}}
+                                        </span>
+                                    </span>
+                                    <span class="ml-4 flex min-w-0 flex-col">
+                                        <span class="text-sm font-medium text-[#191919]">
+                                            {{ $step['name'] }}
+                                        </span>
+                                        <span class="text-sm text-gray-500">
+                                            {{ $step['description'] }}
+                                        </span>
+                                    </span>
+                                </a>
+                                @elseif ($step['status'] === 'current')
+
+                                @if ($stepIdx !== count($steps) - 1)
+                                <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-[#8E5D0B]"
+                                    aria-hidden="true"></div>
+                                @endif
+                                <a href="{{ $step['href'] }}" class="group relative flex items-start">
+                                    <span class="flex h-9 items-center">
+                                        <span
+                                            class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#8E5D0B] group-hover:bg-indigo-800">
+                                            {{-- You need to replace CheckIcon with an equivalent HTML or Blade component --}}
+                                        </span>
+                                    </span>
+                                    <span class="ml-4 flex min-w-0 flex-col">
+                                        <span class="text-sm font-medium text-[#191919]">
+                                            {{ $step['name'] }}
+                                        </span>
+                                        <span class="text-sm text-gray-500">
+                                            {{ $step['description'] }}
+                                        </span>
+                                    </span>
+                                </a>
+                                @else
+
+                                @if ($stepIdx !== count($steps) - 1)
+                                <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-[#8E5D0B]"
+                                    aria-hidden="true"></div>
+                                @endif
+                                <a href="{{ $step['href'] }}" class="group relative flex items-start">
+                                    <span class="flex h-9 items-center">
+                                        <span
+                                            class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#8E5D0B] group-hover:bg-indigo-800">
+                                            {{-- You need to replace CheckIcon with an equivalent HTML or Blade component --}}
+                                        </span>
+                                    </span>
+                                    <span class="ml-4 flex min-w-0 flex-col">
+                                        <span class="text-sm font-medium text-[#191919]">
+                                            {{ $step['name'] }}
+                                        </span>
+                                        <span class="text-sm text-gray-500">
+                                            {{ $step['description'] }}
+                                        </span>
+                                    </span>
+                                </a>
+
+                                @endif
+                            </li>
+                            @endforeach
+                        </ol>
+                    </nav>
+
+
+
                 </div>
+                <!-- ====================== STEP 1 ====================== -->
+
                 <!-- <div class="w-3/5 py-14 px-20  shadow-md bg-cover bg-center"
                     style="background-image: url('assets/images/MainSectionBgImage.png');">
                     <div>
@@ -328,6 +413,8 @@
 
                 </div> -->
 
+                <!-- ====================== STEP 2 ====================== -->
+
                 <!-- <div class="w-3/5 bg-white py-14 px-20  shadow-md bg-cover bg-center"
                     style="background-image: url('assets/images/MainSectionBgImage.png');">
                     <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Company & Owner Details</p>
@@ -340,21 +427,21 @@
                                     Proposal Name#1
                                 </label>
                                 <input type="text" name="proposalName" id="proposalName"
-                                    class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
                             <div class="flex flex-col space-y-1">
                                 <label class="font-sans text-sm font-normal text-[#606266]">
                                     Proposal Name#2
                                 </label>
                                 <input type="text" name="proposalName" id="proposalName"
-                                    class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
                             <div class="flex flex-col space-y-1">
                                 <label class="font-sans text-sm font-normal text-[#606266]">
                                     Proposal Name#3
                                 </label>
                                 <input type="text" name="proposalName" id="proposalName"
-                                    class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
                         </div>
                     </div>
@@ -374,7 +461,7 @@
                                     Full Name
                                 </label>
                                 <input type="text" name="fullName" id="fullName"
-                                    class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
                             <div class="flex flex-col space-y-1">
                                 <label class="font-sans text-sm font-normal text-[#606266]">
@@ -397,7 +484,7 @@
                                     Passport Number
                                 </label>
                                 <input type="text" name="passportNumber" id="passportNumber"
-                                    class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
 
                             <div class="flex flex-col space-y-1">
@@ -405,7 +492,7 @@
                                     Percentage
                                 </label>
                                 <input type="number" name="percentage" id="percentage"
-                                    class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
                         </div>
                     </div>
@@ -431,7 +518,7 @@
                                     Full Name
                                 </label>
                                 <input type="text" name="fullName" id="fullName"
-                                    class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
                             <div class="flex flex-col space-y-1">
                                 <label class="font-sans text-sm font-normal text-[#606266]">
@@ -454,7 +541,7 @@
                                     Passport Number
                                 </label>
                                 <input type="text" name="passportNumber" id="passportNumber"
-                                    class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
                         </div>
                     </div>
@@ -476,7 +563,7 @@
                                 Full Name
                             </label>
                             <input type="text" name="fullName" id="fullName"
-                                class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>
 
                         <div class="flex flex-col space-y-1">
@@ -484,7 +571,7 @@
                                 Email Address
                             </label>
                             <input type="text" name="emailAddress" id="emailAddress"
-                                class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>
 
                         <div class="flex flex-col space-y-1">
@@ -492,7 +579,7 @@
                                 Personal Number
                             </label>
                             <input type="text" name="personalNumber" id="personalNumber"
-                                class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>
 
                         <div class="flex flex-col space-y-1">
@@ -500,7 +587,7 @@
                                 Address 1
                             </label>
                             <input type="text" name="address" id="address"
-                                class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>
 
                         <div class="flex flex-col space-y-1">
@@ -508,7 +595,7 @@
                                 Address 2
                             </label>
                             <input type="text" name="address" id="address"
-                                class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>
 
                         <div class="flex flex-col space-y-1">
@@ -516,7 +603,7 @@
                                 City
                             </label>
                             <input type="text" name="address" id="address"
-                                class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>
 
                         <div class="flex flex-col space-y-1">
@@ -524,7 +611,7 @@
                                 Country
                             </label>
                             <input type="text" name="address" id="address"
-                                class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>
 
                         <div class="flex flex-col space-y-1">
@@ -532,7 +619,7 @@
                                 Zip Code
                             </label>
                             <input type="text" name="address" id="address"
-                                class="block w-full rounded-md border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>
                     </div>
                               </div>
@@ -549,7 +636,7 @@
                     <div class="grid grid-cols-1">
                         <div class="flex flex-col space-y-1">
                             <textarea
-                                class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 h-20 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                                class="block w-full rounded-md bg-[#F6F6F699] border-0 px-2 py-1.5 text-gray-900 h-20 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
                         </div>
                     </div>
                               </div>
@@ -562,8 +649,9 @@
                     </div>
                 </div> -->
 
+                <!-- ====================== STEP 3 ====================== -->
 
-                <div class="w-3/5 bg-white py-14 px-20  shadow-md bg-cover bg-center h-full"
+                <!-- <div class="w-3/5 bg-white py-14 px-20  shadow-md bg-cover bg-center h-full"
                     style="background-image: url('assets/images/MainSectionBgImage.png');">
                     <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Step:1</p>
                     <div class="bg-gray-400 mt-6 p-6 rounded-xl">
@@ -573,7 +661,8 @@
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
                             </div>
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of incorporation</p>
+                                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of
+                                    incorporation</p>
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Canada</p>
                             </div>
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
@@ -599,7 +688,8 @@
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>$500</p>
                             </div>
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                                <p class='font-sans font-medium text-[10px] text-[#343434]'>How did you know about us?</p>
+                                <p class='font-sans font-medium text-[10px] text-[#343434]'>How did you know about us?
+                                </p>
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Social Media</p>
                             </div>
                         </div>
@@ -614,7 +704,8 @@
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
                             </div>
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of incorporation</p>
+                                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of
+                                    incorporation</p>
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Canada</p>
                             </div>
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
@@ -630,7 +721,8 @@
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
                             </div>
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of incorporation</p>
+                                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of
+                                    incorporation</p>
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Canada</p>
                             </div>
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
@@ -642,7 +734,8 @@
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
                             </div>
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of incorporation</p>
+                                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of
+                                    incorporation</p>
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Canada</p>
                             </div>
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
@@ -658,7 +751,8 @@
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
                             </div>
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of incorporation</p>
+                                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of
+                                    incorporation</p>
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Canada</p>
                             </div>
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
@@ -674,7 +768,8 @@
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
                             </div>
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of incorporation</p>
+                                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of
+                                    incorporation</p>
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Canada</p>
                             </div>
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
@@ -686,7 +781,8 @@
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
                             </div>
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of incorporation</p>
+                                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of
+                                    incorporation</p>
                                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Canada</p>
                             </div>
                             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
@@ -714,15 +810,150 @@
                         <p class="mt-4 font-semibold text-base font-sans text-white">Special Request:</p>
                         <div class="grid grid-cols-12 gap-5 ">
                             <div class="col-span-12 bg-[#F6F6F699] rounded-md p-4">
-                                <p class='font-sans font-normal text-[12px] text-[#343434] mb-4'>Loram ipsum Loram ipsum Loram ipsum Loram ipsum Loram ipsum Loram ipsum Loram ipsum Loram ipsum Loram ipsum Loram ipsum </p>
+                                <p class='font-sans font-normal text-[12px] text-[#343434] mb-4'>Loram ipsum Loram ipsum
+                                    Loram ipsum Loram ipsum Loram ipsum Loram ipsum Loram ipsum Loram ipsum Loram ipsum
+                                    Loram ipsum </p>
                             </div>
                         </div>
                     </div>
+                </div> -->
+
+                <!-- ====================== STEP 4 ====================== -->
+                <!-- <div class="w-3/5 bg-white py-14 px-20  shadow-md bg-cover bg-center h-full"
+                    style="background-image: url('assets/images/MainSectionBgImage.png');">
+                    <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Payment</p>
+                    <div class="bg-[#626262] mt-6 mb-6 p-6 rounded-xl">
+                        <p class="text-white text-xl font-medium mb-4">Select your payment method</p>
+
+                        <div class="flex items-center space-x-20">
+                            <div class="flex items-center mb-4">
+                                <input id="default-checkbox" type="checkbox" value=""
+                                    class="w-4 h-4 text-[#11AE89] bg-gray-100 border-gray-300 rounded focus:ring-[#11AE89] ">
+                                <label for="default-checkbox" class="ms-2 text-sm font-medium text-white">Simple</label>
+                            </div>
+
+                            <div class="flex items-center mb-4">
+                                <input id="default-checkbox" type="checkbox" value=""
+                                    class="w-4 h-4 text-[#11AE89] bg-gray-100 border-gray-300 rounded focus:ring-[#11AE89] ">
+                                <label for="default-checkbox" class="ms-2 text-sm font-medium text-white">Bank</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="bg-[#626262] mt-6 mb-6 p-6 rounded-xl">
+                        <p class="text-white text-xl font-medium">Card information</p>
+                        <div class="mt-3">
+                            <div class="flex flex-col space-y-1">
+                                <label class="font-sans text-sm font-normal text-white">
+                                    <span class="text-[#FF0000]">*</span>Card Number
+                                </label>
+                                <input type="text" name="proposalName" id="proposalName"
+                                    class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                            <div class="grid grid-cols-3 gap-8 mt-4">
+                                <div class="">
+                                    <label class="font-sans text-sm font-normal text-white">
+                                        <span class="text-[#FF0000]">*</span>Expiry Month
+                                    </label>
+                                    <input type="text" name="proposalName" id="proposalName"
+                                        class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+
+                                <div class="">
+                                    <label class="font-sans text-sm font-normal text-white">
+                                        <span class="text-[#FF0000]">*</span>Expiry Year
+                                    </label>
+                                    <input type="text" name="proposalName" id="proposalName"
+                                        class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+
+
+                                <div class="">
+                                    <label class="font-sans text-sm font-normal text-white">
+                                        <span class="text-[#FF0000]">*</span> CVC
+                                    </label>
+                                    <input type="text" name="proposalName" id="proposalName"
+                                        class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div> -->
+
+                <!-- ====================== STEP 5 ====================== -->
+
+                <div class="w-3/5 bg-white py-14 px-20  shadow-md bg-cover bg-center h-full"
+                    style="background-image: url('assets/images/MainSectionBgImage.png');">
+                    <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Payment</p>
+                    <div class="bg-[#626262] mt-6 mb-6 p-6 rounded-xl">
+                        <p class="text-white text-xl font-medium mb-4">Select your payment method</p>
+
+                        <div class="flex items-center space-x-20">
+                            <div class="flex items-center mb-4">
+                                <input id="default-checkbox" type="checkbox" value=""
+                                    class="w-4 h-4 text-[#11AE89] bg-gray-100 border-gray-300 rounded focus:ring-[#11AE89] ">
+                                <label for="default-checkbox" class="ms-2 text-sm font-medium text-white">Simple</label>
+                            </div>
+
+                            <div class="flex items-center mb-4">
+                                <input id="default-checkbox" type="checkbox" value=""
+                                    class="w-4 h-4 text-[#11AE89] bg-gray-100 border-gray-300 rounded focus:ring-[#11AE89] ">
+                                <label for="default-checkbox" class="ms-2 text-sm font-medium text-white">Bank</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="bg-[#626262] mt-6 mb-6 p-6 rounded-xl">
+                        <p class="text-white text-xl font-medium">Bank Information</p>
+                        <div class="mt-4">
+
+                            <div class="grid grid-cols-2">
+                                <p class="text-white font-bold text-lg">Instructions:</p>
+                                <p class="text-white font-normal text-base">Bank Instructions</p>
+                            </div>
+
+                            <div class="grid grid-cols-2">
+                                <p class="text-white font-bold text-lg">Bank Name:</p>
+                                <p class="text-white font-normal text-base">Habib Bank</p>
+                            </div>
+
+
+                            <div class="grid grid-cols-2">
+                                <p class="text-white font-bold text-lg">Account name:</p>
+                                <p class="text-white font-normal text-base">Account name</p>
+                            </div>
+
+
+                            <div class="grid grid-cols-2">
+                                <p class="text-white font-bold text-lg">Account number:</p>
+                                <p class="text-white font-normal text-base">Account number</p>
+                            </div>
+
+                            <div class="grid grid-cols-2">
+                                <p class="text-white font-bold text-lg">IBAN:</p>
+                                <p class="text-white font-normal text-base">SDFADF232342</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
                 </div>
 
 
 
-                <div class="w-1/5 sticky top-0 right-0 py-6  shadow-md bg-cover bg-center pt-[300px] p-6" style="background-image: url('assets/images/rightSidebarBgImage.png');>
+
+                <div class="w-1/5 sticky top-0 right-0 px-5 pt-[115px] shadow-md bg-cover bg-center" style="background-image: url('assets/images/rightSidebarBgImage.png');>
                     <div class=" px-5">
                     <p class="font-sans text-xl font-semibold text-[#292929]">
                         Total pay
@@ -815,6 +1046,28 @@
                             </p>
                         </div>
                     </div>
+
+                    <div class="flex items-center justify-between mt-8">
+                        <button type="button"
+                            class="bg-white rounded-lg text-[#FF0000] text-sm font-bold py-2 px-8 flex items-center space-x-2">
+                            <img src='assets/images/left-arrow.svg' alt="Logo" class="" />
+                            <span>Back</span>
+                        </button>
+
+                        <button type="button"
+                            class="bg-[#8E5D0B] rounded-lg text-white text-sm font-bold py-2 px-8 flex items-center space-x-2">
+                            <span>Next</span>
+                            <img src='assets/images/right-arrow.svg' alt="Logo" class="" />
+
+                        </button>
+
+                        <!-- <button type="button"
+                            class="bg-[#8E5D0B] rounded-lg text-white text-sm font-bold py-2 px-8 flex items-center space-x-2">
+                            <span>Proceed</span>
+                            <img src='assets/images/right-arrow.svg' alt="Logo" class="" />
+
+                        </button> -->
+                    </div>
                 </div>
             </div>
 
@@ -829,7 +1082,7 @@
             <h5 class="text-xl font-medium text-gray-900 dark:text-white">test platform</h5>
             <div>
                 <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
-                <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5   dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option selected>Choose a country</option>
                     <option value="US">United States</option>
                     <option value="CA">Canada</option>
@@ -839,7 +1092,7 @@
             </div>
             <div>
                 <label for="countries-multi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
-                <select id="countries-multi" name="countries[]" multiple="multiple" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select id="countries-multi" name="countries[]" multiple="multiple" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5   dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option selected>Choose a country</option>
                     <option value="US">United States</option>
                     <option value="CA">Canada</option>
@@ -850,7 +1103,7 @@
             <div class="flex items-start">
                 <div class="flex items-start">
                     <div class="flex items-center h-5">
-                        <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
+                        <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300   dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
                     </div>
                     <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
                 </div>
