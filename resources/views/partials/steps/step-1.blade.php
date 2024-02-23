@@ -22,7 +22,7 @@
                                 value="{{ $countryObj->code }}" {{ !empty($country) && $country->id === $countryObj->id ? 'selected' : '' }}>{{ $countryObj->name }}</option>
                         @endforeach
                     </select>
-                    <span id="country_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1" style="display: none">Country is required!</span>
+                    <span id="country_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">Country is required!</span>
                     <input type="hidden" name="country_id" id="country_id" value="{{ !empty($country) ? $country->id : '' }}" data-show_states="{{ $country ? $country->show_states : '' }}">
                 </div>
             </div>
@@ -39,7 +39,7 @@
                                     value="{{ $statesObj->name }}" {{ !empty($state) && $state->id === $statesObj->id ? 'selected' : '' }}>{{ $statesObj->name }}</option>
                             @endforeach
                         </select>
-                        <span id="state_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1" style="display: none">
+                        <span id="state_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
                             State is required!
                         </span>
                         <input type="hidden" name="state_id" id="state_id"
@@ -61,7 +61,7 @@
                                     value="{{ $serviceObj->name }}" {{ !empty($service) && $service->id === $serviceObj->id ? 'selected' : '' }}>{{ $serviceObj->name }}</option>
                             @endforeach
                         </select>
-                        <span id="service_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1" style="display: none">
+                        <span id="service_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
                             Service is required!
                         </span>
                         <input type="hidden" name="service_id" id="service_id"
@@ -83,7 +83,7 @@
                                     value="{{ $typeObj->name }}" {{ !empty($service_type) && $service_type->id === $typeObj->id ? 'selected' : '' }}>{{ $typeObj->name }}</option>
                             @endforeach
                         </select>
-                        <span id="type_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1" style="display: none">
+                        <span id="type_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
                             Corporation Type is required!
                         </span>
                     </div>
@@ -96,7 +96,7 @@
                 </label>
                 <input type="number" id="numberOfShareholders" value="1"
                        class="block w-full rounded-md border-0 px-2 py-1.5 h-12 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
-                <span id="shareholder_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1" style="display: none">
+                <span id="shareholder_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
                     Shareholders count is required!
                 </span>
             </div>
@@ -172,7 +172,7 @@
                             <option value="{{ $social->id }}">{{ $social->title }}</option>
                         @endforeach
                     </select>
-                    <span id="social_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1" style="display: none">
+                    <span id="social_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
                         This Field is required!
                     </span>
                 </div>

@@ -3,13 +3,14 @@
     <div class="bg-[#626262] mt-6 p-6 rounded-xl">
         <div class="grid grid-cols-12 gap-5">
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Type of Service:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
-            </div>
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
                 <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of
                     incorporation</p>
                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Canada</p>
+            </div>
+
+            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Type of Service:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
             </div>
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
                 <p class='font-sans font-medium text-[10px] text-[#343434]'>State:</p>

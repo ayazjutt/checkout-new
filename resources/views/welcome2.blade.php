@@ -18,6 +18,9 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <link rel="stylesheet" href="{{ mix('/resources/css/checkout.css') }}">
 
+    <script src="{{ mix('/resources/js/simple-notify.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ mix('/resources/css/simple-notify.min.css') }}">
+
     <script>
     $(document).ready(function() {
         $('select').select2();
