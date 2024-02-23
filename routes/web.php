@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', [\App\Http\Controllers\Controller::class, 'index'])->name('index');
+
+//Route::get('/test', function () {
+//    return view('welcome2');
+//});
