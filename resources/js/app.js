@@ -1,6 +1,6 @@
 import './bootstrap';
 
-let currentStep = 1;
+let currentStep = 2;
 var ownerCount = 1;
 
 function updateUrlParam(elementId, paramName, paramsToRemove) {
@@ -91,6 +91,7 @@ function step2Validation() {
     var billing_city = $('#billing_city').val();
     var billing_country = $('#billing_country').val();
     var billing_zipcode = $('#billing_zipcode').val();
+    var billing_state = $('#billing_state').val();
 
     if (!proposalName1) {$("#proposalName1_error_msg").show(); showToast('Company proposed name is required'); return false;}
 
@@ -104,6 +105,7 @@ function step2Validation() {
     if (!billing_city) {$("#billing_city_error_msg").show(); showToast('Billing city is required');return false;}
     if (!billing_country) {$("#billing_country_error_msg").show(); showToast('Billing country is required');return false;}
     if (!billing_zipcode) {$("#billing_zipcode_error_msg").show(); showToast('Billing zipcode is required');return false;}
+    if (!billing_state) {$("#billing_state_error_msg").show(); showToast('Billing State is required');return false;}
 
     // Check if all required fields have valid values
     if (proposalName1 && proposalName3 && proposalName3 && validateShareholders() && validateBeneficialOwners()) {
@@ -117,9 +119,9 @@ function validateShareholders() {
     var totalPercentage = 0;
 
     // Iterate over each shareholder
-    $('[id^=fullName]').each(function(index) {
+    $('[name^="shareholder_name"]').each(function(index) {
         var fullName = $(this).val();
-        var percentage = parseInt($('#percentage' + (index + 1)).val());
+        var percentage = parseInt($('#shareholder_percentage' + (index + 1)).val());
 
         // Validate full name
         if (fullName.trim() === '') {
@@ -137,11 +139,11 @@ function validateShareholders() {
 
         totalPercentage += percentage;
     });
+    console.log('totalPercentage', totalPercentage)
 
     // Check if the sum of percentages is equal to 100
     if (totalPercentage !== 100) {
-        $('[id^=fullName]').each(function(index) {
-            // alert('The total percentage must be equal to 100');
+        $('[name^="shareholder_name"]').each(function(index) {
             $("#shareholder_percentage_"+(index+1)+"_error_msg").html('The total percentage must be equal to 100').show();
         });
         return false;
@@ -157,6 +159,7 @@ function generateShareholders() {
 
     // Clear existing content in the shareholders_wrapper
     $('#shareholders_wrapper').empty();
+    $('#shareholders_preview_wrapper').empty();
 
     // Generate HTML content for each shareholder
     for (var i = 1; i <= numberOfShareholders; i++) {
@@ -170,7 +173,7 @@ function generateShareholders() {
             <div class="grid grid-cols-2 gap-x-10 gap-y-4">
                 <div class="flex flex-col space-y-1">
                     <label class="font-sans text-sm font-normal">Full Name</label>
-                    <input type="text" name="fullName" id="fullName${i}"
+                    <input type="text" name="shareholder_name${i}" id="shareholder_name${i}"
                         class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
                     <span id="shareholder_name_${i}_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
                         This Field is required!
@@ -179,10 +182,10 @@ function generateShareholders() {
                 <div class="flex flex-col space-y-1 w-full">
                     <label class="font-sans text-sm font-normal">Nationality</label>
                     <div class="selectWrapper">
-                        <select class="selectBox" id="nationality${i}"><option></option>`;
+                        <select class="selectBox" id="shareholder_nationality${i}" name="shareholder_nationality${i}"><option></option>`;
         // Loop through countriesAll to generate options
         countriesAll.forEach(function(country) {
-            html += `<option value="${country.id}">${country.name}</option>`;
+            html += `<option value="${country.name}">${country.name}</option>`;
         });
 
         html += `
@@ -194,7 +197,7 @@ function generateShareholders() {
                 </div>
                 <div class="flex flex-col space-y-1">
                     <label class="font-sans text-sm font-normal">Percentage</label>
-                    <input type="number" name="percentage" id="percentage${i}"
+                    <input type="number" name="shareholder_percentage${i}" id="shareholder_percentage${i}"
                         class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
                         <span id="shareholder_percentage_${i}_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
                             Please enter a valid percentage (between 0 and 100)
@@ -204,7 +207,20 @@ function generateShareholders() {
         `;
         // Append the HTML content to the shareholders_wrapper
         $('#shareholders_wrapper').append(html);
+
         $('select').select2();
+
+        let previewHtml = `<div class="col-span-6 bg-[#F6F6F699] rounded-md p-4">
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Full Name:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_shareholder_name${i}">-</p>
+
+                <p class='font-sans font-medium text-[10px] text-[#343434] mt-4'>Nationality:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_shareholder_nationality${i}">-</p>
+
+                <p class='font-sans font-medium text-[10px] text-[#343434] mt-4'>Percentage:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_shareholder_percentage${i}">-</p>
+            </div>`;
+        $('#shareholders_preview_wrapper').append(previewHtml);
     }
 }
 
@@ -223,7 +239,7 @@ function addBeneficialOwner() {
                         <label class="font-sans text-sm font-normal">
                             Full Name
                         </label>
-                        <input type="text" name="fullName" id="fullName${ownerCount}"
+                        <input type="text" name="beneficial_name${ownerCount}" id="beneficial_name${ownerCount}"
                                class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
 
                         <span id="beneficial_name_${ownerCount}_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
@@ -236,10 +252,10 @@ function addBeneficialOwner() {
                             Nationality
                         </label>
                         <div class="selectWrapper">
-                            <select class="selectBox">
+                            <select class="selectBox" name="beneficial_nationality${ownerCount}" id="beneficial_nationality${ownerCount}">
                                 <option></option>`;
                 countriesAll.forEach(function(country) {
-                    newOwner += `<option value="${country.id}">${country.name}</option>`;
+                    newOwner += `<option value="${country.name}">${country.name}</option>`;
                 });
 
     newOwner += `
@@ -258,6 +274,15 @@ function addBeneficialOwner() {
 
     // Append the new owner HTML to the beneficial_owner_wrapper
     $('#beneficial_owner_wrapper').append(newOwner);
+
+    let previewHtml = `<div class="col-span-6 bg-[#F6F6F699] rounded-md p-4" id="beneficial_preview_single${ownerCount}">
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Full Name:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_beneficial_name${ownerCount}">-</p>
+
+                <p class='font-sans font-medium text-[10px] text-[#343434] mt-4'>Nationality:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_beneficial_nationality${ownerCount}">-</p>
+            </div>`;
+    $('#beneficial_preview_wrapper').append(previewHtml);
 
     // Increment owner count
     ownerCount++;
@@ -278,7 +303,7 @@ function validateBeneficialOwners() {
 
     // Validate each beneficial owner
     $('#beneficial_owner_wrapper > div').each(function(index) {
-        var fullName = $(this).find('input[name="fullName"]').val();
+        var fullName = $(this).find('input[name*="beneficial_name' + (index+1) + '"]').val();
         var nationality = $(this).find('.selectBox').val();
 
         // Check if full name is empty
@@ -313,6 +338,28 @@ function showToast(msg = 'Please fill the required fields.') {
         autotimeout: 3000
     })
 }
+
+function renderPreview(id, value) {
+    console.log(id,value)
+    $("#preview_"+id).html(value);
+
+    if (id === 'numberOfShareholders') $("#numberOfShareholdersPreview").html(value);
+    if (id === 'social_id') $("#social_preview").html(value);
+    if (id === 'proposalName1') $("#preview_proposal_name_1").html(value);
+    if (id === 'proposalName2') $("#preview_proposal_name_2").html(value);
+    if (id === 'proposalName3') $("#preview_proposal_name_3").html(value);
+    if (id === 'special_request') $("#preview_special_request").html(value);
+
+    if (id === 'billing_name') $("#preview_billing_name").html(value);
+    if (id === 'billing_email') $("#preview_billing_email").html(value);
+    if (id === 'billing_personal_number') $("#preview_billing_personal_number").html(value);
+    if (id === 'billing_address1') $("#preview_billing_address1").html(value);
+    if (id === 'billing_address2') $("#preview_billing_address2").html(value);
+    if (id === 'billing_country') $("#preview_billing_country").html(value);
+    if (id === 'billing_state') $("#preview_billing_state").html(value);
+    if (id === 'billing_city') $("#preview_billing_city").html(value);
+    if (id === 'billing_zipcode') $("#preview_billing_zipcode").html(value);
+}
 $(document).ready(function() {
     generateShareholders();
 
@@ -332,6 +379,10 @@ $(document).ready(function() {
         updateUrlParam('serviceTypeDropdown', 'type');
     });
 
+    $('#social_id').change(function() {
+        $("$social_preview").html($(this).val())
+    });
+
     $('.processing-type-radio').change(function() {
         // Get the amount from the data attribute
         let additionalAmount = 0;
@@ -346,6 +397,8 @@ $(document).ready(function() {
         });
         var amount = $(this).data('amount');
         $("#total_pay_amount_summary").html(parseInt(state_amount) + parseInt(amount) + parseInt(additionalAmount));
+        $("#processing_type_amount_preview").html(parseInt(amount));
+
 
         // Log the amount to the console
         $(".processing-type-radio-summary").html(amount);
@@ -364,6 +417,7 @@ $(document).ready(function() {
 
 
         let total_am = parseInt($('.processing-type-radio:checked').data('amount')) + parseInt(state_amount);
+        let additional_amount = 0;
         // Loop through the selected values
         selectedValues.forEach(function(value) {
             // Find the additional service object with the corresponding id
@@ -371,8 +425,10 @@ $(document).ready(function() {
                 return service.id == value;
             });
             total_am = parseInt(total_am) + parseInt(additionalService.amount);
+            additional_amount+=parseInt(additionalService.amount);
 
             $("#total_pay_amount_summary").html(total_am);
+            $("#additional_services_preview").html('$'+additional_amount);
 
             // If additional service is found, create HTML element
             if (additionalService) {
@@ -394,6 +450,7 @@ $(document).ready(function() {
             $(this).val(1);
         }
         $("#numberOfShareholdersSummary").html(val)
+        $("#numberOfShareholdersPreview").html(val)
         generateShareholders();
     });
 
@@ -444,6 +501,7 @@ $(document).ready(function() {
 
     $('input').on('input', function() {
         var inputValue = $(this).val();
+        var inputId = $(this).attr('id');
         var errorMsg = $(this).siblings('.error-msg');
 
         if (inputValue.trim() !== '') {
@@ -453,5 +511,23 @@ $(document).ready(function() {
             // If input is empty, show the error message
             errorMsg.show();
         }
+
+        renderPreview(inputId, inputValue);
+    });
+
+    $('select').on('change', function() {
+        var inputValue = $(this).val();
+        var inputId = $(this).attr('id');
+        var errorMsg = $(this).siblings('.error-msg');
+
+        if (inputValue.trim() !== '') {
+            // If input is not empty, hide the error message
+            errorMsg.hide();
+        } else {
+            // If input is empty, show the error message
+            errorMsg.show();
+        }
+
+        renderPreview(inputId, inputValue);
     });
 });

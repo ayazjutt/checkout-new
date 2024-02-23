@@ -43,8 +43,6 @@
 
         <div id="shareholders_wrapper"></div>
 
-
-
     </div>
 
     <div class="bg-[#626262] mt-6 p-6 rounded-xl">
@@ -135,22 +133,33 @@
 
             <div class="flex flex-col space-y-1">
                 <label class="font-sans text-sm font-normal">
-                    City
+                    Country
                 </label>
-                <input type="text" name="billing_city" id="billing_city"
+                <input type="text" name="billing_country" id="billing_country"
                        class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
-                <span id="billing_city_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
+                <span id="billing_country_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
                     This field is required!
                 </span>
             </div>
 
             <div class="flex flex-col space-y-1">
                 <label class="font-sans text-sm font-normal">
-                    Country
+                    State
                 </label>
-                <input type="text" name="billing_country" id="billing_country"
+                <input type="text" name="billing_state" id="billing_state"
                        class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
-                <span id="billing_country_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
+                <span id="billing_state_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
+                    This field is required!
+                </span>
+            </div>
+
+            <div class="flex flex-col space-y-1">
+                <label class="font-sans text-sm font-normal">
+                    City
+                </label>
+                <input type="text" name="billing_city" id="billing_city"
+                       class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+                <span id="billing_city_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
                     This field is required!
                 </span>
             </div>
@@ -179,7 +188,7 @@
 
         <div class="grid grid-cols-1">
             <div class="flex flex-col space-y-1">
-                <textarea name="special_request"
+                <textarea name="special_request" id="special_request"
                     class="block w-full rounded-md bg-[#F6F6F699] border-0 px-2 py-1.5 text-gray-900 h-20 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
             </div>
         </div>

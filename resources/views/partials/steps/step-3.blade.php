@@ -3,41 +3,45 @@
     <div class="bg-[#626262] mt-6 p-6 rounded-xl">
         <div class="grid grid-cols-12 gap-5">
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of
-                    incorporation</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Canada</p>
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of incorporation</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>{{ $country ? $country->name : '-' }}</p>
+            </div>
+
+            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>State:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>{{ $state ? $state->name : '-' }}</p>
             </div>
 
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
                 <p class='font-sans font-medium text-[10px] text-[#343434]'>Type of Service:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>{{ $service ? $service->name : '-' }}</p>
             </div>
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>State:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
-            </div>
+
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
                 <p class='font-sans font-medium text-[10px] text-[#343434]'>Corporation Type:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>LLC</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>{{ $service_type ? $service_type->name : '-' }}</p>
             </div>
 
 
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
                 <p class='font-sans font-medium text-[10px] text-[#343434]'>Number of Share Holder</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>100</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="numberOfShareholdersPreview">1</p>
             </div>
+
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Extra Services:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Agent: $50</p>
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Additional Services:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="additional_services_preview">$0</p>
             </div>
+
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
                 <p class='font-sans font-medium text-[10px] text-[#343434]'>Processing Type:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>$500</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="processing_type_amount_preview">${{ $processing_types[0]->amount }}</p>
             </div>
+
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
                 <p class='font-sans font-medium text-[10px] text-[#343434]'>How did you know about us?
                 </p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Social Media</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="social_preview">-</p>
             </div>
         </div>
     </div>
@@ -47,119 +51,67 @@
 
         <div class="grid grid-cols-12 gap-5">
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Type of Service:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Proposal Name #1:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_proposal_name_1">-</p>
             </div>
+
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of
-                    incorporation</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Canada</p>
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Proposal Name #2:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_proposal_name_2">-</p>
             </div>
+
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>State:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Proposal Name #3:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_proposal_name_3">-</p>
             </div>
         </div>
 
-        <p class="mt-4 font-semibold text-base font-sans text-white">Beneficial Owner</p>
+        <p class="mt-4 mb-2 font-semibold text-base font-sans text-white">Shareholders</p>
+        <div class="grid grid-cols-12 gap-5" id="shareholders_preview_wrapper"></div>
+
+        <p class="mt-4 mb-2 font-semibold text-base font-sans text-white">Beneficial Owners</p>
+        <div class="grid grid-cols-12 gap-5" id="beneficial_preview_wrapper"></div>
+
+        <p class="mt-4 mb-2 font-semibold text-base font-sans text-white">Billing Information:</p>
         <div class="grid grid-cols-12 gap-5 ">
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Type of Service:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Full Name:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_billing_name">-</p>
             </div>
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of
-                    incorporation</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Canada</p>
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Email Address</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_billing_email">-</p>
+            </div>
+            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Personal Number:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_billing_personal_number">-</p>
+            </div>
+            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Address1:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_billing_address1">-</p>
+            </div>
+            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Address2</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_billing_address2">-</p>
+            </div>
+            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Country:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_billing_country">-</p>
             </div>
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
                 <p class='font-sans font-medium text-[10px] text-[#343434]'>State:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_billing_state">-</p>
             </div>
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Type of Service:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
-            </div>
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of
-                    incorporation</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Canada</p>
-            </div>
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>State:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>City:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_billing_city">-</p>
             </div>
         </div>
 
-        <p class="mt-4 font-semibold text-base font-sans text-white">Shareholder Information:</p>
-        <div class="grid grid-cols-12 gap-5 ">
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Type of Service:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
-            </div>
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of
-                    incorporation</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Canada</p>
-            </div>
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>State:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
-            </div>
-        </div>
-
-        <p class="mt-4 font-semibold text-base font-sans text-white">Billing Information:</p>
-        <div class="grid grid-cols-12 gap-5 ">
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Type of Service:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
-            </div>
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of
-                    incorporation</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Canada</p>
-            </div>
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>State:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
-            </div>
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Type of Service:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
-            </div>
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of
-                    incorporation</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>Canada</p>
-            </div>
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>State:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
-            </div>
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>State:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
-            </div>
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>State:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
-            </div>
-        </div>
-
-        <p class="mt-4 font-semibold text-base font-sans text-white">Zip code</p>
-        <div class="grid grid-cols-12 gap-5 ">
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Type of Service:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>.</p>
-            </div>
-        </div>
-
-        <p class="mt-4 font-semibold text-base font-sans text-white">Special Request:</p>
+        <p class="mt-4 mb-2 font-semibold text-base font-sans text-white">Special Request:</p>
         <div class="grid grid-cols-12 gap-5 ">
             <div class="col-span-12 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-normal text-[12px] text-[#343434] mb-4'>Loram ipsum Loram ipsum
-                    Loram ipsum Loram ipsum Loram ipsum Loram ipsum Loram ipsum Loram ipsum Loram ipsum
-                    Loram ipsum </p>
+                <p class='font-sans font-normal text-[12px] text-[#343434] mb-4' id="preview_special_request"></p>
             </div>
         </div>
     </div>
