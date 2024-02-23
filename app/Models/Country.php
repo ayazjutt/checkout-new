@@ -36,4 +36,9 @@ class Country extends Model
     {
         return $this->hasMany(State::class);
     }
+
+    public function additional_services(): HasMany
+    {
+        return $this->hasMany(AdditionalService::class);
+    }
 }
