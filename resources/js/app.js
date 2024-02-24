@@ -1,6 +1,6 @@
 import './bootstrap';
 
-let currentStep = 2;
+let currentStep = 1;
 var ownerCount = 1;
 
 function updateUrlParam(elementId, paramName, paramsToRemove) {
