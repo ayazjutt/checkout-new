@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::get('/test', [\App\Http\Controllers\Controller::class, 'index'])->name('index');
 
+Route::post('/signup-with-order', [\App\Http\Controllers\Controller::class, 'checkout'])->name('checkout');
 //Route::get('/test', function () {
 //    return view('welcome2');
 //});

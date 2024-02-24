@@ -3,6 +3,11 @@ import './bootstrap';
 let currentStep = 1;
 var ownerCount = 1;
 
+const stripe = Stripe(stripeKey);
+const elements = stripe.elements();
+const cardElement = elements.create('card');
+cardElement.mount('#card-element');
+
 function updateUrlParam(elementId, paramName, paramsToRemove) {
     // Retrieve the value from the specified element
     var paramValue = $('#' + elementId).val();
@@ -274,15 +279,17 @@ function addBeneficialOwner() {
 
     // Append the new owner HTML to the beneficial_owner_wrapper
     $('#beneficial_owner_wrapper').append(newOwner);
+    $('#number_of_beneficial_owners').val(ownerCount);
 
-    let previewHtml = `<div class="col-span-6 bg-[#F6F6F699] rounded-md p-4" id="beneficial_preview_single${ownerCount}">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Full Name:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_beneficial_name${ownerCount}">-</p>
-
-                <p class='font-sans font-medium text-[10px] text-[#343434] mt-4'>Nationality:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_beneficial_nationality${ownerCount}">-</p>
-            </div>`;
-    $('#beneficial_preview_wrapper').append(previewHtml);
+    renderBeneficialPreview();
+    // let previewHtml = `<div class="col-span-6 bg-[#F6F6F699] rounded-md p-4" id="beneficial_preview_single${ownerCount}">
+    //             <p class='font-sans font-medium text-[10px] text-[#343434]'>Full Name:</p>
+    //             <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_beneficial_name${ownerCount}">-</p>
+    //
+    //             <p class='font-sans font-medium text-[10px] text-[#343434] mt-4'>Nationality:</p>
+    //             <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_beneficial_nationality${ownerCount}">-</p>
+    //         </div>`;
+    // $('#beneficial_preview_wrapper').append(previewHtml);
 
     // Increment owner count
     ownerCount++;
@@ -299,6 +306,7 @@ function validateBeneficialOwners() {
         // alert('At least one beneficial owner must be added');
         isValid = false;
         return isValid;
+
     }
 
     // Validate each beneficial owner
@@ -326,10 +334,27 @@ function validateBeneficialOwners() {
     return isValid;
 }
 
-function showToast(msg = 'Please fill the required fields.') {
+function renderBeneficialPreview() {
+    let previewHtml = ``;
+    $('#beneficial_owner_wrapper > div').each(function(index) {
+        var fullName = $(this).find('input[name*="beneficial_name' + (index + 1) + '"]').val();
+        var nationality = $(this).find('.selectBox').val();
+
+        previewHtml += `<div class="col-span-6 bg-[#F6F6F699] rounded-md p-4" id="beneficial_preview_single${index}">
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Full Name:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_beneficial_name${index}">${fullName}</p>
+
+                <p class='font-sans font-medium text-[10px] text-[#343434] mt-4'>Nationality:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_beneficial_nationality${index}">${nationality}</p>
+            </div>`;
+    });
+    $('#beneficial_preview_wrapper').html(previewHtml);
+}
+
+function showToast(msg = 'Please fill the required fields.', title='Validation failed!', type='warning') {
     new Notify ({
-        status: 'warning',
-        title: 'Validation failed!',
+        status: type,
+        title: title,
         text: msg,
         position: 'bottom right',
         effect: 'slide',
@@ -340,11 +365,10 @@ function showToast(msg = 'Please fill the required fields.') {
 }
 
 function renderPreview(id, value) {
-    console.log(id,value)
     $("#preview_"+id).html(value);
 
     if (id === 'numberOfShareholders') $("#numberOfShareholdersPreview").html(value);
-    if (id === 'social_id') $("#social_preview").html(value);
+    // if (id === 'social_id') $("#social_preview").html(value);
     if (id === 'proposalName1') $("#preview_proposal_name_1").html(value);
     if (id === 'proposalName2') $("#preview_proposal_name_2").html(value);
     if (id === 'proposalName3') $("#preview_proposal_name_3").html(value);
@@ -359,6 +383,86 @@ function renderPreview(id, value) {
     if (id === 'billing_state') $("#preview_billing_state").html(value);
     if (id === 'billing_city') $("#preview_billing_city").html(value);
     if (id === 'billing_zipcode') $("#preview_billing_zipcode").html(value);
+}
+
+function processStripePayment(){
+    let formData = $('#registerForm').serializeArray();
+    let postData = {};
+    $.each(formData, function (index, field) {
+        postData[field.name] = field.value;
+    });
+
+    // Create a Payment Method from the card element
+    stripe.createPaymentMethod({
+        type: 'card',
+        card: cardElement,
+    }).then(function (result) {
+        if (result.error) {
+            showToast(result.error.message, 'Payment Failed!', 'error')
+        } else {
+            postData['stripe_payment_id'] = result.paymentMethod.id;
+
+            // Make the AJAX request to the server
+            $.ajax({
+                url: checkout_post_route,
+                method: 'POST',
+                data: postData,
+                dataType: 'json',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                },
+            })
+                .done(function (data) {
+                    if (data.message) {
+                        alert(data.message);
+                        // window.location.href = '/dashboard';
+                    } else {
+                        // Handle errors (if any)
+                        if (data.errors) {
+                            showToast('An unknown error occurred.', 'Order Failed!', 'error')
+                        } else if (data.error) {
+                            showToast(data.error, 'Payment Failed!', 'error')
+                        } else {
+                            showToast('An unknown error occurred.', 'Order Failed!', 'error')
+                        }
+                    }
+                })
+                .fail(function (error) {
+                    showToast('An unknown error occurred.', 'Validation Failed!', 'error')
+                });
+        }
+    });
+}
+
+function processBankPayment() {
+    let transaction_id = $("#transaction_id").val()
+    if (!transaction_id) {showToast('Transaction id is required.',); return false;};
+
+    let formData = $('#registerForm').serializeArray();
+    let postData = {};
+    $.each(formData, function (index, field) {
+        postData[field.name] = field.value;
+    });
+    postData['transaction_id'] = transaction_id;
+
+    // AJAX POST request
+    $.ajax({
+        url: checkout_post_route,
+        method: 'POST',
+        data: postData,
+        dataType: 'json',
+        success: function (response) {
+            // Handle success response
+            alert(response)
+            console.log('Success:', response);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            // Handle error response
+            showToast('An unknown error occurred.', 'Order Failed!', 'error')
+            console.error('Error:', errorThrown);
+        }
+    });
+
 }
 $(document).ready(function() {
     generateShareholders();
@@ -377,10 +481,6 @@ $(document).ready(function() {
 
     $('#serviceTypeDropdown').change(function() {
         updateUrlParam('serviceTypeDropdown', 'type');
-    });
-
-    $('#social_id').change(function() {
-        $("$social_preview").html($(this).val())
     });
 
     $('.processing-type-radio').change(function() {
@@ -410,6 +510,9 @@ $(document).ready(function() {
 
         // Get the selected values from the dropdown
         var selectedValues = $(this).val();
+
+        $("#additional_services").val(selectedValues)
+
         if(selectedValues.length)
             $("#additional_services_wrapper").show();
         else
@@ -428,7 +531,8 @@ $(document).ready(function() {
             additional_amount+=parseInt(additionalService.amount);
 
             $("#total_pay_amount_summary").html(total_am);
-            $("#additional_services_preview").html('$'+additional_amount);
+            $("#additional_services_preview").html(additional_amount);
+            $("#additional_services_preview_box").show();
 
             // If additional service is found, create HTML element
             if (additionalService) {
@@ -456,25 +560,46 @@ $(document).ready(function() {
 
     $('#next').on('click', function() {
 
+        if (currentStep === 5 && $(this).hasClass('place-order')) {
+            console.log('currentStep', currentStep)
+            const payment_type = $('.payment_method_radio:checked').val();
+            console.log('payment_type', payment_type)
+            if (payment_type && payment_type === 'online') {
+                processStripePayment()
+            }
+
+            if (payment_type && payment_type === 'bank') {
+                processBankPayment()
+            }
+        }
+
         if (currentStep < 4) {
             if (currentStep === 1 && !step1Validation()) {return;}
             if (currentStep === 2 && !step2Validation()) {return;}
 
             currentStep = currentStep +1;
             if (currentStep === 2) $("#back").show();
+            if (currentStep === 4) $("#next").text('Place Order').addClass('place-order');
             renderStepHandler(currentStep)
+
+            $('select').select2();
         }
+
+        if (currentStep === 4)
+            currentStep = currentStep +1;
     });
 
     $('#back').on('click', function() {
         if (currentStep > 1) {
             currentStep = currentStep - 1;
             renderStepHandler(currentStep)
+            $('select').select2();
         }
     });
 
     $(document).on('click', '.remove-beneficial-owner', function() {
         $(this).parent().remove();
+        $('#number_of_beneficial_owners').val($('#beneficial_owner_wrapper > div').length);
 
         // Reset the owner count if there are no owners left
         if ($('#beneficial_owner_wrapper > div').length === 0) {
@@ -492,6 +617,8 @@ $(document).ready(function() {
             });
             ownerCount--;
         }
+
+        renderBeneficialPreview()
     });
 
     // Click event listener for add button
@@ -499,7 +626,7 @@ $(document).ready(function() {
         addBeneficialOwner();
     });
 
-    $('input').on('input', function() {
+    $(document).on('input', 'input, textarea', function() {
         var inputValue = $(this).val();
         var inputId = $(this).attr('id');
         var errorMsg = $(this).siblings('.error-msg');
@@ -513,14 +640,15 @@ $(document).ready(function() {
         }
 
         renderPreview(inputId, inputValue);
+        renderBeneficialPreview()
     });
 
-    $('select').on('change', function() {
+    $(document).on('change', 'select', function() {
         var inputValue = $(this).val();
         var inputId = $(this).attr('id');
         var errorMsg = $(this).siblings('.error-msg');
 
-        if (inputValue.trim() !== '') {
+        if (inputValue !== '') {
             // If input is not empty, hide the error message
             errorMsg.hide();
         } else {
@@ -529,5 +657,20 @@ $(document).ready(function() {
         }
 
         renderPreview(inputId, inputValue);
+        renderBeneficialPreview()
+    });
+
+    $('.payment_method_radio').on('change', function() {
+        // Get the value of the selected radio button
+        var selectedValue = $(this).val();
+        if (selectedValue === 'bank') {
+            $("#bank_payment_method").show();
+            $("#online_payment_method").hide();
+        }
+
+        if (selectedValue === 'online') {
+            $("#bank_payment_method").hide();
+            $("#online_payment_method").show();
+        }
     });
 });

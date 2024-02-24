@@ -7,41 +7,45 @@
                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>{{ $country ? $country->name : '-' }}</p>
             </div>
 
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>State:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>{{ $state ? $state->name : '-' }}</p>
-            </div>
+            @if($state)
+                <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
+                    <p class='font-sans font-medium text-[10px] text-[#343434]'>State:</p>
+                    <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>{{ $state ? $state->name : '-' }}</p>
+                </div>
+            @endif
 
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
                 <p class='font-sans font-medium text-[10px] text-[#343434]'>Type of Service:</p>
                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>{{ $service ? $service->name : '-' }}</p>
             </div>
 
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Corporation Type:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>{{ $service_type ? $service_type->name : '-' }}</p>
-            </div>
+            @if($service_type)
+                <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
+                    <p class='font-sans font-medium text-[10px] text-[#343434]'>Corporation Type:</p>
+                    <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>{{ $service_type ? $service_type->name : '-' }}</p>
+                </div>
+            @endif
 
-
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Number of Share Holder</p>
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Number of Shareholder</p>
                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="numberOfShareholdersPreview">1</p>
             </div>
 
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>Additional Services:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="additional_services_preview">$0</p>
-            </div>
-
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
                 <p class='font-sans font-medium text-[10px] text-[#343434]'>Processing Type:</p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="processing_type_amount_preview">${{ $processing_types[0]->amount }}</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>$<span id="processing_type_amount_preview">{{ $processing_types[0]->amount }}</span></p>
             </div>
 
-            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-medium text-[10px] text-[#343434]'>How did you know about us?
-                </p>
-                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="social_preview">-</p>
+            @if(!empty($state_amount))
+                <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
+                    <p class='font-sans font-medium text-[10px] text-[#343434]'>State Charges</p>
+                    <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>$<span id="state_charges_preview">{{ $state_amount }}</span></p>
+                </div>
+            @endif
+
+            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4" style="display: none;" id="additional_services_preview_box">
+                <p class='font-sans font-medium text-[10px] text-[#343434]'>Additional Services:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>$<span id="additional_services_preview"></span></p>
             </div>
         </div>
     </div>

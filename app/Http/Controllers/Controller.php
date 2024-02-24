@@ -88,4 +88,9 @@ class Controller extends BaseController
             'countries_all'
         ));
     }
+
+    public function checkout(Request $request)
+    {
+        return $request;
+    }
 }

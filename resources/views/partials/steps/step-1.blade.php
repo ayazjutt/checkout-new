@@ -90,7 +90,7 @@
                     <select class="selectBox" name="service_type_id" id="serviceTypeDropdown">
                         <option></option>
                         @foreach($service_types as $typeObj)
-                        <option value="{{ $typeObj->name }}"
+                        <option value="{{ $typeObj->id }}"
                             {{ !empty($service_type) && $service_type->id === $typeObj->id ? 'selected' : '' }}>
                             {{ $typeObj->name }}</option>
                         @endforeach
@@ -108,7 +108,7 @@
                 <label class="font-sans text-sm font-normal">
                     Number of Shareholders
                 </label>
-                <input type="number" id="numberOfShareholders" value="1"
+                <input type="number" name="number_of_shareholders" id="numberOfShareholders" value="1"
                     class="block w-full rounded-md border-0 px-2 py-1.5 h-12 bg-[#FFFFFF99] text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                 <span id="shareholder_error_msg"
                     class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg"
@@ -133,11 +133,12 @@
                     Extra services
                 </label>
                 <div class="selectWrapper">
-                    <select class="selectBox" multiple name="additional_services[]" id="additionalServicesDropdown">
+                    <select class="selectBox" multiple id="additionalServicesDropdown">
                         @foreach($country->additional_services as $additional_service)
                         <option value="{{ $additional_service->id }}">{{ $additional_service->name }}</option>
                         @endforeach
                     </select>
+                    <input type="hidden" name="additional_services" id="additional_services">
                 </div>
             </div>
         </div>

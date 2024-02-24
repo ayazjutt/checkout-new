@@ -35,6 +35,7 @@ class Company extends Model
         'lead_medium',
         'payment_id',
         'payment_method_name',
+        'transaction_id'
     ];
 
     /**

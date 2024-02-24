@@ -52,6 +52,8 @@
                     Beneficial Owner
                 </p>
 
+                <input type="hidden" name="number_of_beneficial_owners" id="number_of_beneficial_owners" value="1">
+
                 <button type="button"
                         class="bg-black font-normal text-xs text-white rounded-md py-1 w-14">
                     Add

@@ -26,6 +26,8 @@
         $('select').select2();
     });
 
+    let stripeKey = '{{ config('stripe.public_key') }}';
+    let checkout_post_route = '{{ route('checkout') }}';
     let state_amount = {{ $state_amount }};
     let countriesAll = <?php echo json_encode($countries_all); ?>;
     {{--let processing_amount = {{ $processing_types[0]->amount }};--}}
@@ -42,16 +44,13 @@
 
     @vite('resources/js/app.js')
 
-    <style>
-    .col-span-custom {
-        width: calc((100% / 12) * 2.5);
-        /* Adjust the number as needed */
-    }
-    </style>
+    <script src="https://js.stripe.com/v3/"></script>
+
 </head>
 
 <body class="antialiased">
-
+<form action="{{ route('checkout') }}" method="post" id="registerForm" name="registerForm">
+    @csrf
     <!-- Mobile Header -->
     <div style="background-image: url('assets/images/mobile-header-bg.png');"
         class="bg-cover bg-no-repeat bg-center h-full">
@@ -149,7 +148,7 @@
     </div>
 
 
-
+</form>
 </body>
 
 </html>
