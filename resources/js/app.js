@@ -60,6 +60,11 @@ function renderStepHandler(step) {
     $('[id^=step-]').hide();
     $('#step-' + step + '-wrapper').show();
 }
+function renderThankyouStepHandler() {
+    $('[id^=step-]').hide();
+    $('#form_area').remove();
+    $('#thank_you_page').show();
+}
 renderStepHandler(currentStep)
 
 function step1Validation() {
@@ -414,8 +419,8 @@ function processStripePayment(){
             })
                 .done(function (data) {
                     if (data.message) {
-                        alert(data.message);
-                        // window.location.href = '/dashboard';
+                        showToast('Your order has been placed!', 'Congratulations!', 'success')
+                        renderThankyouStepHandler()
                     } else {
                         // Handle errors (if any)
                         if (data.errors) {
@@ -453,8 +458,8 @@ function processBankPayment() {
         dataType: 'json',
         success: function (response) {
             // Handle success response
-            alert(response)
-            console.log('Success:', response);
+            showToast('Your order has been placed!', 'Congratulations!', 'success')
+            renderThankyouStepHandler()
         },
         error: function (jqXHR, textStatus, errorThrown) {
             // Handle error response
@@ -462,6 +467,13 @@ function processBankPayment() {
         }
     });
 
+}
+
+function renderStepProgressHandler(currentStep) {
+    console.log('currentStep', currentStep)
+    let previousStep = currentStep - 1;
+    $("#progress-step-"+previousStep).removeClass('bg-gray-200 text-[#8E5D0B] border-[#8E5D0B] border-2 font-bold').addClass('bg-[#8E5D0B]')
+    $("#progress-step-"+currentStep).addClass('bg-gray-200 text-[#8E5D0B] border-[#8E5D0B] border-2 font-bold').removeClass('bg-[#8E5D0B]')
 }
 $(document).ready(function() {
     generateShareholders();
@@ -583,6 +595,8 @@ $(document).ready(function() {
 
             $('select').select2();
         }
+
+        renderStepProgressHandler(currentStep)
 
         if (currentStep === 4)
             currentStep = currentStep +1;

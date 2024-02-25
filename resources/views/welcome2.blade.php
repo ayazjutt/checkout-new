@@ -76,7 +76,11 @@
 <form class="lg:h-full" action="{{ route('checkout') }}" method="post" id="registerForm" name="registerForm">
     @csrf
     <!-- Mobile Header -->
-    <div style="background-image: url('assets/images/mobile-header-bg.png');"
+    <div class="grid grid-cols-10 h-full lg:mt-0 mt-16" id="thank_you_page" style="display: none;">
+        @include('partials.steps.step-5')
+    </div>
+
+    <div style="background-image: url('assets/images/mobile-header-bg.png');" id="form_area"
         class="bg-cover bg-no-repeat bg-center h-full">
         <div class="flex items-center justify-center pt-8 w-full lg:hidden">
             <img src='assets/images/logo.png' alt="Logo" class="w-20" />
@@ -140,10 +144,7 @@
                     </li>
                 </ol>
             </nav>
-
-
         </div>
-
 
         <div class="grid grid-cols-10 h-full lg:mt-0 mt-16">
             {{--  Left Side Bar  --}}
@@ -163,8 +164,8 @@
 
                 {{--  Step 4  --}}
                 @include('partials.steps.step-4')
-            </div>
 
+            </div>
 
             {{--  Right Side Bar  --}}
             @include('partials.right-side-bar')
@@ -174,7 +175,7 @@
     <div class="lg:hidden block absolute bottom-0 h-36 bg-white text-black w-full rounded-tl-2xl rounded-tr-2xl" id="bottomDiv">
         <div class="w-full flex items-center justify-center">
             <div class="h-1 bg-[#8E5D0B] w-40 my-2 rounded"></div>
-        </div>    
+        </div>
 
         <div class="px-4 w-full">
             <div class="flex items-start justify-between my-4">
@@ -186,7 +187,7 @@
             </div>
 
             <div class="w-full hidden mb-6" id="summary">
-    
+
                 {{-- Jurisdiction --}}
                 {{--            @if(!empty($country))--}}
                 <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
@@ -198,7 +199,7 @@
                     </p>
                 </div>
                 {{--            @endif--}}
-    
+
                 {{-- State --}}
                 @if(!empty($state))
                 <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
@@ -210,7 +211,7 @@
                     </p>
                 </div>
                 @endif
-    
+
                 {{-- Service --}}
                 @if(!empty($service))
                 <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
@@ -222,7 +223,7 @@
                     </p>
                 </div>
                 @endif
-    
+
                 {{-- Type --}}
                 @if(!empty($service_type))
                 <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
@@ -234,7 +235,7 @@
                     </p>
                 </div>
                 @endif
-    
+
                 {{-- Number of Shareholders --}}
                 @if(!empty($service))
                 <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
@@ -246,7 +247,7 @@
                     </p>
                 </div>
                 @endif
-    
+
                 {{-- Processing --}}
                 @if(!empty($processing_types))
                 <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
@@ -258,7 +259,7 @@
                     </p>
                 </div>
                 @endif
-    
+
                 {{-- State Charges --}}
                 @if(!empty($state_amount))
                 <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
@@ -270,13 +271,13 @@
                     </p>
                 </div>
                 @endif
-    
+
                 {{-- Extra Extra --}}
                 <div class="mt-6" style="display: none" id="additional_services_wrapper">
                     <p class="font-sans text-sm font-bold text-[#292929]">
                         Extra Services:
                     </p>
-    
+
                     <div class="" id="additional_services_container">
                         <div class="flex items-center justify-between mt-2 border-b border-[#1A1A1A] pb-1">
                             <p class="font-sans text-xs font-bold text-[#292929]">

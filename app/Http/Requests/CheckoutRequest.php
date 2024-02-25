@@ -48,7 +48,7 @@ class CheckoutRequest extends FormRequest
             'special_request' => 'string|nullable',
 
             'payment_method' => 'required|string|in:bank,online', // Ensure payment_method is either 'bank' or 'stripe'
-            'transaction_id' => 'required_if:payment_method,bank|string', // Required if payment_method is 'bank'
+            'transaction_id' => 'nullable|required_if:payment_method,bank|string',
             'stripe_payment_id' => 'required_if:payment_method,online|string', // Required if payment_method is 'stripe'
         ];
     }

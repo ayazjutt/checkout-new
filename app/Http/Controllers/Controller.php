@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CheckoutRequest;
+use App\Mail\ThankYouEmail;
 use App\Models\AdditionalService;
 use App\Models\Company;
 use App\Models\CompanyAdditionalService;
@@ -24,6 +25,9 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use Stripe\Stripe;
+use Stripe\Exception\CardException;
+use Stripe\PaymentIntent;
 
 class Controller extends BaseController
 {
@@ -164,6 +168,8 @@ class Controller extends BaseController
             }
         }
 
+//        return $state_service_amount;
+
         if ($request->payment_method === 'bank') {
             $user = $this->createUserAccount($request);
             $company = $this->createCompany($request, $user, $service, $service_type, $processing_type, $state, $country, $social, $state_service_amount, $total_payable_amount, null, null);
@@ -172,12 +178,44 @@ class Controller extends BaseController
             $this->addCompanyBeneficialOwners($request, $company->id);
             $this->addCompanyBillingDetails($request, $company->id);
 
+            $this->sendThankYouEmail($user, $country, $service, $total_payable_amount);
+            return response()->json(['message' => 'Congratulations! your order has been placed!']);
+
         } elseif ($request->payment_method === 'online') {
+
+            $stripeRequest['payment_method'] = $request->stripe_payment_id;
+            $stripeRequest['totalAmount'] = $total_payable_amount;
+
+            $stripePaymentResult = $this->handleStripePayment((object)$stripeRequest);
+
+            if ($stripePaymentResult['success']) {
+
+
+                $user = $this->createUserAccount($request);
+                $company = $this->createCompany($request, $user, $service, $service_type, $processing_type, $state, $country, $social, $state_service_amount, $total_payable_amount, $stripePaymentResult['pay_id'], $stripePaymentResult['pay_slip']);
+                $this->addCompanyAdditionalServices($request, $company->id);
+                $this->addCompanyShareholders($request, $company->id);
+                $this->addCompanyBeneficialOwners($request, $company->id);
+                $this->addCompanyBillingDetails($request, $company->id);
+
+                $this->sendThankYouEmail($user, $country, $service, $total_payable_amount);
+                return response()->json(['message' => 'Congratulations! your order has been placed!']);
+
+            } else {
+                throw ValidationException::withMessages([
+                    'processing_type' => [$stripePaymentResult['error']],
+                ]);
+            }
 
         }
 
 
         return $request;
+    }
+
+    private function sendThankYouEmail($user, $country, $service, $total_payable_amount) {
+        Mail::to($user->email)->send(new ThankYouEmail($country->name, $service->name, $total_payable_amount));
+        return response()->json(['message' => 'Congratulations! your order has been placed!']);
     }
 
     private function createUserAccount($request)
@@ -193,9 +231,9 @@ class Controller extends BaseController
             ]);
 
             // Send an email with the user's email and password
-            Mail::raw("Your email: $request->billing_email\nYour password: $password", function ($message) use ($request) {
-                $message->to($request->billing_email)->subject('Bizvee Account Details');
-            });
+//            Mail::raw("Your email: $request->billing_email\nYour password: $password", function ($message) use ($request) {
+//                $message->to($request->billing_email)->subject('Bizvee Account Details');
+//            });
         }
         return $user;
     }
@@ -214,11 +252,11 @@ class Controller extends BaseController
             'company_name_2' => !empty($request->proposalName2) ? $request->proposalName2 : null,
             'company_name_3' => !empty($request->proposalName3) ? $request->proposalName3 : null,
             'service_name' => $service->name,
-            'service_amount' => $service->amount,
+            'service_amount' => 0, //$service->amount,
             'service_type_name' => !empty($service_type) ? $service_type->name : null,
             'processing_type_name' => $processing_type->name,
             'processing_type_amount' => $processing_type->amount,
-            'state_service_amount' => !empty($state_service_amount) ? $state_service_amount : null,
+            'state_service_amount' => !empty($state_service_amount) ? $state_service_amount->amount : null,
             'payment_method' => $request->payment_method,
             'total_amount' => $total_amount,
             'transaction_id' => !empty($request->transaction_id) ? $request->transaction_id : null,
@@ -246,7 +284,7 @@ class Controller extends BaseController
 
     private function addCompanyShareholders($request, $company_id) {
 
-        for ($x = 0; $x <= $request->number_of_shareholders; $x++) {
+        for ($x = 1; $x <= $request->number_of_shareholders; $x++) {
             $country = Country::where('name', $request->input("shareholder_nationality$x"))->first();
             CompanyShareholder::create([
                 'company_id' => $company_id,
@@ -258,7 +296,7 @@ class Controller extends BaseController
     }
     private function addCompanyBeneficialOwners($request, $company_id) {
 
-        for ($x = 0; $x <= $request->number_of_beneficial_owners; $x++) {
+        for ($x = 1; $x <= $request->number_of_beneficial_owners; $x++) {
             $country = Country::where('name', $request->input("beneficial_nationality$x"))->first();
             CompanyBeneficialOwner::create([
                 'company_id' => $company_id,
@@ -282,5 +320,32 @@ class Controller extends BaseController
             'zipcode' => $request->billing_zipcode,
         ]);
 
+    }
+
+    private static function handleStripePayment($stripeRequest)
+    {
+        Stripe::setApiVersion('2020-08-27');
+        Stripe::setApiKey(config('stripe.secret_key'));
+
+        try {
+            $paymentIntent = PaymentIntent::create([
+                'amount' => $stripeRequest->totalAmount * 100,
+                'currency' => 'usd',
+                'payment_method' => $stripeRequest->payment_method,
+                'confirm' => true,
+            ]);
+        } catch (CardException $e) {
+            return ['success' => false, 'error' => $e->getMessage()];
+        }
+
+        if ($paymentIntent->status === 'succeeded') {
+            return [
+                'success' => true,
+                'pay_id' => $paymentIntent->id,
+                'pay_slip' => $paymentIntent->charges->data[0]->receipt_url
+            ];
+        } else {
+            return ['success' => false, 'error' => 'Payment failed. Please try again later.'];
+        }
     }
 }
