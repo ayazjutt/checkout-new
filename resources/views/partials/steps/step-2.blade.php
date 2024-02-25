@@ -3,7 +3,7 @@
     <p class='font-sans font-normal text-xs text-[#FFFFFF]'>A short details for company type. </p>
 
     <div class="bg-[#626262] mt-6 p-6 rounded-xl">
-        <div class="grid grid-cols-2 gap-x-10 gap-y-4">
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-4">
             <div class="flex flex-col space-y-1">
                 <label class="font-sans text-sm font-normal">
                     Proposal Name # 1
@@ -80,7 +80,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-x-10 gap-y-4">
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-4">
             <div class="flex flex-col space-y-1">
                 <label class="font-sans text-sm font-normal">
                     Full Name

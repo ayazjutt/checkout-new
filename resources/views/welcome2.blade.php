@@ -73,7 +73,7 @@
 </head>
 
 <body class="antialiased relative">
-<form class="lg:h-full" action="{{ route('checkout') }}" method="post" id="registerForm" name="registerForm">
+<form class="lg:h-full relative lg:pb-0 pb-36" action="{{ route('checkout') }}" method="post" id="registerForm" name="registerForm">
     @csrf
     <!-- Mobile Header -->
     <div class="grid grid-cols-10 h-full lg:mt-0 mt-16" id="thank_you_page" style="display: none;">

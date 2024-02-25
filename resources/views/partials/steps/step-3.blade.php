@@ -1,7 +1,7 @@
 <div id="step-3-wrapper" style="display: none;">
     <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Step:1</p>
     <div class="bg-[#626262] mt-6 p-6 rounded-xl">
-        <div class="grid grid-cols-12 gap-5">
+        <div class="grid lg:grid-cols-12 grid-cols-1 gap-5">
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
                 <p class='font-sans font-medium text-[10px] text-[#343434]'>Jurisdiction of incorporation</p>
                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5'>{{ $country ? $country->name : '-' }}</p>
@@ -53,7 +53,7 @@
     <p class='font-sans font-semibold text-[28px] text-[#C8C8C8] mt-4'>Step:2</p>
     <div class="bg-[#626262] mt-6 p-6 rounded-xl">
 
-        <div class="grid grid-cols-12 gap-5">
+        <div class="grid lg:grid-cols-12 grid-cols-1 gap-5">
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
                 <p class='font-sans font-medium text-[10px] text-[#343434]'>Proposal Name #1:</p>
                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_proposal_name_1">-</p>
@@ -71,13 +71,13 @@
         </div>
 
         <p class="mt-4 mb-2 font-semibold text-base font-sans text-white">Shareholders</p>
-        <div class="grid grid-cols-12 gap-5" id="shareholders_preview_wrapper"></div>
+        <div class="grid lg:grid-cols-12 grid-cols-1 gap-5" id="shareholders_preview_wrapper"></div>
 
         <p class="mt-4 mb-2 font-semibold text-base font-sans text-white">Beneficial Owners</p>
-        <div class="grid grid-cols-12 gap-5" id="beneficial_preview_wrapper"></div>
+        <div class="grid lg:grid-cols-12 grid-cols-1 gap-5" id="beneficial_preview_wrapper"></div>
 
         <p class="mt-4 mb-2 font-semibold text-base font-sans text-white">Billing Information:</p>
-        <div class="grid grid-cols-12 gap-5 ">
+        <div class="grid lg:grid-cols-12 grid-cols-1 gap-5 ">
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
                 <p class='font-sans font-medium text-[10px] text-[#343434]'>Full Name:</p>
                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_billing_name">-</p>
@@ -113,7 +113,7 @@
         </div>
 
         <p class="mt-4 mb-2 font-semibold text-base font-sans text-white">Special Request:</p>
-        <div class="grid grid-cols-12 gap-5 ">
+        <div class="grid lg:grid-cols-12 grid-cols-1 gap-5 ">
             <div class="col-span-12 bg-[#F6F6F699] rounded-md p-4">
                 <p class='font-sans font-normal text-[12px] text-[#343434] mb-4' id="preview_special_request"></p>
             </div>
