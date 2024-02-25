@@ -46,10 +46,34 @@
 
     <script src="https://js.stripe.com/v3/"></script>
 
+    <script>
+  $(document).ready(function () {
+    // Function to toggle the height of the bottom div
+    function toggleBottomDiv() {
+      var $bottomDiv = $("#bottomDiv");
+
+      if ($bottomDiv.height() === 144) {
+        $bottomDiv.animate({ height: 500 }, 500);
+        // Add any additional actions you want to perform when expanding the div
+        $("#summary").show();
+    } else {
+        $bottomDiv.animate({ height: 144 }, 500);
+        $("#summary").hide();
+        // Add any additional actions you want to perform when collapsing the div
+      }
+    }
+
+    // Event listener for the bottom div click
+    $("#bottomDiv").on("click", function () {
+      toggleBottomDiv();
+    });
+  });
+</script>
+
 </head>
 
-<body class="antialiased">
-<form action="{{ route('checkout') }}" method="post" id="registerForm" name="registerForm">
+<body class="antialiased relative">
+<form class="lg:h-full" action="{{ route('checkout') }}" method="post" id="registerForm" name="registerForm">
     @csrf
     <!-- Mobile Header -->
     <div style="background-image: url('assets/images/mobile-header-bg.png');"
@@ -126,7 +150,7 @@
             @include('partials.left-side-bar')
 
             {{--  Form Area  --}}
-            <div class="lg:col-span-6 col-span-12 py-8 lg:px-20 px-4 shadow-md bg-cover bg-center text-white"
+            <div class="lg:col-span-6 col-span-12 py-8 lg:px-20 px-4 shadow-md bg-cover bg-center text-white h-auto"
                 style="background-image: url('assets/images/MainSectionBgImage.png');">
                 {{--  Step 1  --}}
                 @include('partials.steps.step-1')
@@ -145,6 +169,132 @@
             {{--  Right Side Bar  --}}
             @include('partials.right-side-bar')
         </div>
+    </div>
+
+    <div class="lg:hidden block absolute bottom-0 h-36 bg-white text-black w-full rounded-tl-2xl rounded-tr-2xl" id="bottomDiv">
+        <div class="w-full flex items-center justify-center">
+            <div class="h-1 bg-[#8E5D0B] w-40 my-2 rounded"></div>
+        </div>    
+
+        <div class="px-4 w-full">
+            <div class="flex items-start justify-between my-4">
+                <p class="ml-4 font-semibold text-lg text-[#292929]">Total payment</p>
+                <div class="flex flex-col space-y-2">
+                    <p class="font-bold text-3xl text-[#8E5D0B]">$700</p>
+                    <p class="font-normal underline text-xs text-[#292929]">View Price Detail</p>
+                </div>
+            </div>
+
+            <div class="w-full hidden mb-6" id="summary">
+    
+                {{-- Jurisdiction --}}
+                {{--            @if(!empty($country))--}}
+                <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
+                    <p class="font-sans text-sm font-bold text-[#292929]">
+                        Jurisdiction of incorporation
+                    </p>
+                    <p class="font-sans text-sm font-medium text-[#292929]">
+                        {{ $country ? $country->name : '-' }}
+                    </p>
+                </div>
+                {{--            @endif--}}
+    
+                {{-- State --}}
+                @if(!empty($state))
+                <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
+                    <p class="font-sans text-sm font-bold text-[#292929]">
+                        State
+                    </p>
+                    <p class="font-sans text-sm font-medium text-[#292929]">
+                        {{ $state->name }}
+                    </p>
+                </div>
+                @endif
+    
+                {{-- Service --}}
+                @if(!empty($service))
+                <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
+                    <p class="font-sans text-sm font-bold text-[#292929]">
+                        Service Type
+                    </p>
+                    <p class="font-sans text-sm font-medium text-[#292929]">
+                        {{ $service->name }}
+                    </p>
+                </div>
+                @endif
+    
+                {{-- Type --}}
+                @if(!empty($service_type))
+                <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
+                    <p class="font-sans text-sm font-bold text-[#292929]">
+                        Corporation Type
+                    </p>
+                    <p class="font-sans text-sm font-medium text-[#292929]">
+                        {{ $service_type->name }}
+                    </p>
+                </div>
+                @endif
+    
+                {{-- Number of Shareholders --}}
+                @if(!empty($service))
+                <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
+                    <p class="font-sans text-sm font-bold text-[#292929]">
+                        Number of Shareholders
+                    </p>
+                    <p class="font-sans text-sm font-medium text-[#292929]" id="numberOfShareholdersSummary">
+                        1
+                    </p>
+                </div>
+                @endif
+    
+                {{-- Processing --}}
+                @if(!empty($processing_types))
+                <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
+                    <p class="font-sans text-sm font-bold text-[#292929]">
+                        Processing Type
+                    </p>
+                    <p class="font-sans text-sm font-medium text-[#292929]">
+                        $<span class="processing-type-radio-summary">{{ $processing_types[0]->amount }}</span>
+                    </p>
+                </div>
+                @endif
+    
+                {{-- State Charges --}}
+                @if(!empty($state_amount))
+                <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
+                    <p class="font-sans text-sm font-bold text-[#292929]">
+                        State Charges
+                    </p>
+                    <p class="font-sans text-sm font-medium text-[#292929]">
+                        ${{ $state_amount }}
+                    </p>
+                </div>
+                @endif
+    
+                {{-- Extra Extra --}}
+                <div class="mt-6" style="display: none" id="additional_services_wrapper">
+                    <p class="font-sans text-sm font-bold text-[#292929]">
+                        Extra Services:
+                    </p>
+    
+                    <div class="" id="additional_services_container">
+                        <div class="flex items-center justify-between mt-2 border-b border-[#1A1A1A] pb-1">
+                            <p class="font-sans text-xs font-bold text-[#292929]">
+                                Address
+                            </p>
+                            <p class="font-sans text-sm font-medium text-[#292929]">
+                                $100
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <button class="w-full h-8 bg-[#8E5D0B] text-white text-center font-semibold text-base rounded-lg">Next</button>
+        </div>
+
     </div>
 
 

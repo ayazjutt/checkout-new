@@ -15,7 +15,7 @@
                     Jurisdiction of incorporation
                 </label>
                 <div class="selectWrapper">
-                    <select class="selectBox bg-[#FFFFFF99] h-12 text-black px-3" id="countryDropdown">
+                    <select class="selectBox bg-[#FFFFFF99] text-black px-3" id="countryDropdown">
                         <option>Select Country</option>
                         @foreach($countries as $countryObj)
                         <option value="{{ $countryObj->code }}"
@@ -37,7 +37,7 @@
                     State
                 </label>
                 <div class="selectWrapper">
-                    <select class="selectBox bg-[#FFFFFF99] h-12 text-black " id="stateDropdown">
+                    <select class="selectBox bg-[#FFFFFF99] text-black" id="stateDropdown">
                         <option>Select State</option>
                         @foreach($states as $statesObj)
                         <option value="{{ $statesObj->name }}"
@@ -61,7 +61,7 @@
                     Type of service
                 </label>
                 <div class="selectWrapper">
-                    <select class="selectBox" id="serviceDropdown">
+                    <select class="selectBox bg-[#FFFFFF99] text-black" id="serviceDropdown">
                         <option>Select Service</option>
                         @foreach($services as $serviceObj)
                         <option value="{{ $serviceObj->name }}"
@@ -87,7 +87,7 @@
                     Corporation Type
                 </label>
                 <div class="selectWrapper">
-                    <select class="selectBox" name="service_type_id" id="serviceTypeDropdown">
+                    <select class="selectBox bg-[#FFFFFF99] text-black" name="service_type_id" id="serviceTypeDropdown">
                         <option></option>
                         @foreach($service_types as $typeObj)
                         <option value="{{ $typeObj->id }}"
@@ -109,7 +109,7 @@
                     Number of Shareholders
                 </label>
                 <input type="number" name="number_of_shareholders" id="numberOfShareholders" value="1"
-                    class="block w-full rounded-md border-0 px-2 py-1.5 h-12 bg-[#FFFFFF99] text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                    class="block w-20 text-center rounded-md border-0 px-2 py-1.5 h-12 bg-[#FFFFFF99] text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6" />
                 <span id="shareholder_error_msg"
                     class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg"
                     style="display: none">
@@ -127,13 +127,13 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
             <div class="flex flex-col space-y-1">
                 <label class="font-sans text-sm font-normal">
                     Extra services
                 </label>
                 <div class="selectWrapper">
-                    <select class="selectBox" multiple id="additionalServicesDropdown">
+                    <select class="selectBox bg-[#FFFFFF99] text-black" multiple id="additionalServicesDropdown">
                         @foreach($country->additional_services as $additional_service)
                         <option value="{{ $additional_service->id }}">{{ $additional_service->name }}</option>
                         @endforeach
@@ -158,7 +158,7 @@
                 <input id="processingType{{ $processing_type->id }}" aria-describedby="comments-description"
                     name="processing_type" type="radio" {{ $key === 0 ? 'checked' : '' }}
                     value="{{ $processing_type->id }}"
-                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600 processing-type-radio"
+                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 processing-type-radio"
                     data-amount="{{ $processing_type->amount }}" />
                     <label htmlFor="processingType{{ $processing_type->id }}" class="font-semibold text-white text-base ml-3">
                         {{ $processing_type->name }}
@@ -181,7 +181,7 @@
 
                 </label>
                 <div class="selectWrapper">
-                    <select class="selectBox bg-[#FFFFFF99] h-12 w-full" name="social_id" id="social_id">
+                    <select class="selectBox bg-[#FFFFFF99] w-full" name="social_id" id="social_id">
                         <option></option>
                         @foreach($socials as $social)
                         <option value="{{ $social->id }}">{{ $social->title }}</option>
@@ -197,3 +197,5 @@
         </div>
     </div>
 </div>
+
+
