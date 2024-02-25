@@ -81,10 +81,10 @@
             </div>
             @endif
 
-            @if(!empty($service_types))
+            @if(count($service_types))
             <div class="flex flex-col space-y-1">
                 <label class="font-sans text-sm font-normal">
-                    Corporation Type
+                    Corporation Type {{ count($service_types) }}
                 </label>
                 <div class="selectWrapper">
                     <select class="selectBox bg-[#FFFFFF99] text-black" name="service_type_id" id="serviceTypeDropdown">
@@ -160,7 +160,7 @@
                     value="{{ $processing_type->id }}"
                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 processing-type-radio"
                     data-amount="{{ $processing_type->amount }}" />
-                    <label htmlFor="processingType{{ $processing_type->id }}" class="font-semibold text-white text-base ml-3">
+                    <label for="processingType{{ $processing_type->id }}" class="font-semibold text-white text-base ml-3">
                         {{ $processing_type->name }}
                     </label>
             </div>

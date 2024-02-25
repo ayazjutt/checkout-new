@@ -23,9 +23,9 @@ class CheckoutRequest extends FormRequest
     {
         return [
             'country_id' => 'required|numeric|exists:countries,id',
-            'state_id' => 'required|numeric|exists:states,id',
+            'state_id' => 'nullable|numeric|exists:states,id',
             'service_id' => 'required|numeric|exists:services,id',
-            'service_type_id' => 'required|numeric|exists:service_types,id',
+            'service_type_id' => 'nullable|numeric|exists:service_types,id',
             'social_id' => 'required|numeric|exists:socials,id',
             'processing_type' => 'required|numeric|exists:processing_types,id',
 

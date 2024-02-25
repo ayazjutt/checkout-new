@@ -13,7 +13,7 @@
                     <a href="javascript:void(0)" class="group relative flex items-start">
                         <span class="flex h-9 items-center">
                             <span
-                                class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 text-[#8E5D0B] border-[#8E5D0B] border-2 font-bold" id="progress-step-1">
+                                class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 text-[#8E5D0B] border-[#8E5D0B] border-2 font-bold" data-step="1" id="progress-step-1">
                                 1
                             </span>
                         </span>
@@ -36,7 +36,7 @@
                     <a href="javascript:void(0)" class="group relative flex items-start cursor-not-allowed">
                         <span class="flex h-9 items-center">
                             <span
-                                class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#626262]" id="progress-step-2">
+                                class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#626262]" data-step="2" id="progress-step-2">
                                 2
                             </span>
                         </span>
@@ -59,7 +59,7 @@
                     <a href="javascript:void(0)" class="group relative flex items-start cursor-not-allowed">
                         <span class="flex h-9 items-center">
                             <span
-                                class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#626262]" id="progress-step-3">
+                                class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#626262]" data-step="3" id="progress-step-3">
                                 3
                             </span>
                         </span>
@@ -79,7 +79,7 @@
                     <a href="javascript:void(0)" class="group relative flex items-start cursor-not-allowed">
                         <span class="flex h-9 items-center">
                             <span
-                                class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#626262]" id="progress-step-4">
+                                class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#626262]" data-step="4" id="progress-step-4">
                                 4
                             </span>
                         </span>

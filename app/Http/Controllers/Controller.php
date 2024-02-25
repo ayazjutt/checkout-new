@@ -70,14 +70,14 @@ class Controller extends BaseController
                 if ($serviceObj->name == $service_name)
                     $service = $serviceObj;
 
-        $service_types = null;
+        $service_types = [];
         if ($service)
             $service_types = $service->types;
 
-        $service_type = null;
-        if (!empty($service_types))
+        $service_type = [];
+        if (count($service_types))
             foreach ($service_types as $typeObj)
-                if ($typeObj->name == $type_name)
+                if ($typeObj->id == $type_name)
                     $service_type = $typeObj;
 
         $processing_types = ProcessingType::all();
@@ -173,7 +173,10 @@ class Controller extends BaseController
         if ($request->payment_method === 'bank') {
             $user = $this->createUserAccount($request);
             $company = $this->createCompany($request, $user, $service, $service_type, $processing_type, $state, $country, $social, $state_service_amount, $total_payable_amount, null, null);
-            $this->addCompanyAdditionalServices($request, $company->id);
+
+            if (!empty($request->additional_services))
+                $this->addCompanyAdditionalServices($request, $company->id);
+
             $this->addCompanyShareholders($request, $company->id);
             $this->addCompanyBeneficialOwners($request, $company->id);
             $this->addCompanyBillingDetails($request, $company->id);
@@ -193,7 +196,10 @@ class Controller extends BaseController
 
                 $user = $this->createUserAccount($request);
                 $company = $this->createCompany($request, $user, $service, $service_type, $processing_type, $state, $country, $social, $state_service_amount, $total_payable_amount, $stripePaymentResult['pay_id'], $stripePaymentResult['pay_slip']);
-                $this->addCompanyAdditionalServices($request, $company->id);
+
+                if (!empty($request->additional_services))
+                    $this->addCompanyAdditionalServices($request, $company->id);
+
                 $this->addCompanyShareholders($request, $company->id);
                 $this->addCompanyBeneficialOwners($request, $company->id);
                 $this->addCompanyBillingDetails($request, $company->id);
@@ -214,8 +220,8 @@ class Controller extends BaseController
     }
 
     private function sendThankYouEmail($user, $country, $service, $total_payable_amount) {
-        Mail::to($user->email)->send(new ThankYouEmail($country->name, $service->name, $total_payable_amount));
-        return response()->json(['message' => 'Congratulations! your order has been placed!']);
+//        Mail::to($user->email)->send(new ThankYouEmail($country->name, $service->name, $total_payable_amount));
+//        return response()->json(['message' => 'Congratulations! your order has been placed!']);
     }
 
     private function createUserAccount($request)
