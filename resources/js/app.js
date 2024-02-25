@@ -458,8 +458,7 @@ function processBankPayment() {
         },
         error: function (jqXHR, textStatus, errorThrown) {
             // Handle error response
-            showToast('An unknown error occurred.', 'Order Failed!', 'error')
-            console.error('Error:', errorThrown);
+            showToast(jqXHR.responseJSON.message, 'Order Failed!', 'error')
         }
     });
 

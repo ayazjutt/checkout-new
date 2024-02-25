@@ -15,28 +15,32 @@ class Company extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'company_name',
-        'company_name_2',
-        'company_name_3',
-        'service_name',
-        'service_amount',
-        'company_status',
-        'active_jurisdiction',
-        'country_id',
-        'state_id',
-        'service_types_id',
-        'user_id',
-        'processing_types_id',
-        'processing_type_title',
-        'processing_type_amount',
-        'notes',
-        'special_request',
-        'lead_medium',
-        'payment_id',
-        'payment_method_name',
-        'transaction_id'
-    ];
+  protected $fillable = [
+    'user_id',
+    'country_id',
+    'service_id',
+    'service_type_id',
+    'state_id',
+    'processing_type_id',
+    'social_id',
+    'company_name_1',
+    'company_name_2',
+    'company_name_3',
+    'service_name',
+    'service_amount',
+    'service_type_name',
+    'processing_type_name',
+    'processing_type_amount',
+    'state_service_amount',
+    'payment_method',
+    'total_amount',
+    'transaction_id',
+    'stripe_pay_id',
+    'stripe_pay_receipt',
+    'status',
+    'notes',
+    'special_request',
+  ];
 
     /**
      * The attributes that should be cast to native types.
