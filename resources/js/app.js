@@ -68,10 +68,23 @@ function reapplyJavaScript() {
             method: 'GET',
             data: {}, // Send selected value as parameter
             success: function (response) {
+                console.log(typeof response)
                 // Update HTML content with data received from server
-                document.open();
-                document.write(response);
-                document.close();
+
+                // document.open();
+                // document.write(response);
+                // document.close();
+
+                var responseString = response.toString();
+
+                // Find the index of the start and end of the body content
+                var startIndex = responseString.indexOf('<body class="antialiased relative">');
+                var endIndex = responseString.indexOf('</body>');
+
+                // Extract the body content
+                var newBodyHtml = responseString.substring(startIndex + 36, endIndex);
+                $('body').html(newBodyHtml);
+
                 reapplyJavaScript();
                 $('select').select2();
                 loaderHandler(false)
@@ -848,6 +861,9 @@ function reapplyJavaScript() {
             }
         });
 
+        $('li[id^="progress-step"]').click(function() {
+            alert('clicked');
+        })
         $('[id^="progress-step"]').click(function() {
             // Your event handling code here
             let going_to_step = $(this).data('step');

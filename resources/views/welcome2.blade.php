@@ -7,6 +7,19 @@
 
     <title>Laravel</title>
 
+    <!-- Global Vars -->
+    <script>
+        var stripeKey = '{{ config('stripe.public_key') }}';
+        var checkout_post_route = '{{ route('checkout') }}';
+        var state_amount = {{ $state_amount }};
+        var countriesAll = <?php echo json_encode($countries_all); ?>;
+    </script>
+    @if(!empty($country))
+        <script>
+            var additionalServicesData = <?php echo json_encode($country->additional_services); ?>;
+        </script>
+    @endif
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
@@ -16,36 +29,19 @@
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <link rel="stylesheet" href="{{ mix('/resources/css/checkout.css') }}">
 
-    <script src="{{ mix('/resources/js/simple-notify.min.js') }}"></script>
-    <link rel="stylesheet" href="{{ mix('/resources/css/simple-notify.min.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.css" />
+
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/checkout.css'])
 
     <script>
     $(document).ready(function() {
         $('select').select2();
     });
-
-    var stripeKey = '{{ config('stripe.public_key') }}';
-    var checkout_post_route = '{{ route('checkout') }}';
-    var state_amount = {{ $state_amount }};
-    var countriesAll = <?php echo json_encode($countries_all); ?>;
-    {{--let processing_amount = {{ $processing_types[0]->amount }};--}}
     </script>
 
-    @if(!empty($country))
-        <script>
-            var additionalServicesData = <?php echo json_encode($country->additional_services); ?>;
-        </script>
-    @endif
-
-    @vite('resources/css/app.css')
-    @vite('resources/css/checkout.css')
-
-    @vite('resources/js/app.js')
-
     <script src="https://js.stripe.com/v3/"></script>
-{{--    <script src="{{ mix('/resources/js/js_stripe.js') }}"></script>--}}
 
     <script>
   $(document).ready(function () {
