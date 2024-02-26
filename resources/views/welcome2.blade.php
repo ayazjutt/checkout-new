@@ -152,7 +152,7 @@
             @include('partials.left-side-bar')
 
             {{--  Form Area  --}}
-            <div class="lg:col-span-6 col-span-12 py-8 lg:px-20 px-4 shadow-md bg-cover bg-center text-white h-auto"
+            <div class="lg:col-span-6 col-span-12 lg:py-8 pb-0 lg:px-20 px-4 shadow-md bg-cover bg-center text-white h-auto"
                 style="background-image: url('assets/images/MainSectionBgImage.png');">
                 {{--  Step 1  --}}
                 @include('partials.steps.step-1')
@@ -171,34 +171,34 @@
             {{--  Right Side Bar  --}}
             @include('partials.right-side-bar')
         </div>
-    </div>
-
-    <div class="lg:hidden block sticky bottom-0 h-36 bg-white text-black w-full rounded-tl-2xl rounded-tr-2xl" id="bottomDiv">
-        <div class="w-full flex items-center justify-center mobile-summary">
-            <div class="h-1 bg-[#8E5D0B] w-40 my-2 rounded"></div>
-        </div>
-
-        <div class="px-4 w-full">
-            <div class="flex items-start justify-between my-4 mobile-summary">
-                <p class="ml-4 font-semibold text-lg text-[#292929]">Total payment</p>
-                <div class="flex flex-col space-y-2">
-                    <p class="font-bold text-3xl text-[#8E5D0B]">
-                        $<span class="total_pay_amount_summary">{{ $processing_types[0]->amount + $state_amount }}</span>
-                    </p>
-                    <p class="font-normal underline text-xs text-[#292929]">View Price Detail</p>
+        <div class="lg:hidden block sticky bottom-0 z-10 h-36 bg-white text-black w-full rounded-tl-2xl rounded-tr-2xl" id="bottomDiv">
+            <div class="w-full flex items-center justify-center mobile-summary">
+                <div class="h-1 bg-[#8E5D0B] w-40 my-2 rounded"></div>
+            </div>
+    
+            <div class="px-4 w-full">
+                <div class="flex items-start justify-between my-4 mobile-summary">
+                    <p class="ml-4 font-semibold text-lg text-[#292929]">Total payment</p>
+                    <div class="flex flex-col space-y-2">
+                        <p class="font-bold text-3xl text-[#8E5D0B]">
+                            $<span class="total_pay_amount_summary">{{ $processing_types[0]->amount + $state_amount }}</span>
+                        </p>
+                        <p class="font-normal underline text-xs text-[#292929]">View Price Detail</p>
+                    </div>
                 </div>
+    
+                <div class="w-full hidden mb-6" id="summary">
+                    @include('partials.summary')
+                </div>
+    
+    
+    
+                <button type="button" class="w-full h-8 bg-[#8E5D0B] text-white text-center font-semibold text-base rounded-lg next mobile-view">Next</button>
             </div>
-
-            <div class="w-full hidden mb-6" id="summary">
-                @include('partials.summary')
-            </div>
-
-
-
-            <button type="button" class="w-full h-8 bg-[#8E5D0B] text-white text-center font-semibold text-base rounded-lg next mobile-view">Next</button>
+    
         </div>
-
     </div>
+
 
 
 </form>

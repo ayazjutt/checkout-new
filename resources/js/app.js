@@ -304,7 +304,7 @@ function reapplyJavaScript() {
                 <div class="flex flex-col space-y-1 w-full">
                     <label class="font-sans text-sm font-normal">Nationality</label>
                     <div class="selectWrapper">
-                        <select class="selectBox" id="shareholder_nationality${i}" name="shareholder_nationality${i}"><option></option>`;
+                        <select class="selectBox h-12 bg-[#FFFFFF99] text-black" id="shareholder_nationality${i}" name="shareholder_nationality${i}"><option></option>`;
             // Loop through countriesAll to generate options
             countriesAll.forEach(function (country) {
                 html += `<option value="${country.name}">${country.name}</option>`;
@@ -375,7 +375,7 @@ function reapplyJavaScript() {
                         </label>
                         <div class="flex items-center space-x-4">
                             <div class="selectWrapper w-full">
-                                <select class="selectBox" name="beneficial_nationality${ownerCount}" id="beneficial_nationality${ownerCount}">
+                                <select class="selectBox h-12 bg-[#FFFFFF99] text-black" name="beneficial_nationality${ownerCount}" id="beneficial_nationality${ownerCount}">
                                     <option></option>`;
                                         countriesAll.forEach(function (country) {
                                             newOwner += `<option value="${country.name}">${country.name}</option>`;
@@ -766,6 +766,7 @@ function reapplyJavaScript() {
 
             if (currentStep === 4) {
                 moundStripeElement()
+                $("#registerForm").css('height','100%')
             }
 
             renderStepProgressHandler(currentStep)

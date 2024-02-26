@@ -13,3 +13,9 @@ body {
         width: 100% !important;
     }
 }
+
+.select2-container--default .select2-selection--single  {
+    background-color: #FFFFFF99 !important;
+    color: black;
+    height: 48px;
+}

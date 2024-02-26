@@ -2,7 +2,6 @@
     <div>
         <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Company Type</p>
         <p class='font-sans font-normal text-xs text-[#FFFFFF]'>A short details for company type. </p>
-
     </div>
     <div class="bg-[#626262] mt-6 lg:p-6 p-4 rounded-xl">
         <p class="font-sans text-lg font-bold text-white mb-4">
