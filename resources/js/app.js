@@ -398,7 +398,7 @@ function reapplyJavaScript() {
                                 </span>
                             </div>
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="remove-beneficial-owner">
-                            <path d="M3 3L13 13M3 13L13 3" stroke="#000000" stroke-width="1.6" stroke-linecap="square"/>
+                            <path d="M3 3L13 13M3 13L13 3" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="square"/>
                             </svg>
 
                         </div>
