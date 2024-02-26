@@ -6,7 +6,6 @@ function reapplyJavaScript() {
     var stripe = null;
     var cardElement = null;
     // if (typeof stripeKey === 'undefined') {
-
         // const stripe = Stripe(stripeKey);
         // console.log('going to mound stripe', typeof stripe)
         // const elements = stripe.elements();
@@ -195,37 +194,42 @@ function reapplyJavaScript() {
         }
         if (!billing_email) {
             $("#billing_email_error_msg").show();
-            showToast('Billing email is required');
+            showToast('Billing email is required.');
+            return false;
+        }
+        if (!isValidEmail(billing_email)) {
+            $("#billing_email_error_msg").show();
+            showToast('Billing email is not valid.');
             return false;
         }
         if (!billing_personal_number) {
             $("#billing_personal_number_error_msg").show();
-            showToast('Billing personal_number is required');
+            showToast('Billing personal_number is required.');
             return false;
         }
         if (!billing_address1) {
             $("#billing_address1_error_msg").show();
-            showToast('Billing address1 is required');
+            showToast('Billing address1 is required.');
             return false;
         }
         if (!billing_city) {
             $("#billing_city_error_msg").show();
-            showToast('Billing city is required');
+            showToast('Billing city is required.');
             return false;
         }
         if (!billing_country) {
             $("#billing_country_error_msg").show();
-            showToast('Billing country is required');
+            showToast('Billing country is required.');
             return false;
         }
         if (!billing_zipcode) {
             $("#billing_zipcode_error_msg").show();
-            showToast('Billing zipcode is required');
+            showToast('Billing zipcode is required.');
             return false;
         }
         if (!billing_state) {
             $("#billing_state_error_msg").show();
-            showToast('Billing State is required');
+            showToast('Billing State is required.');
             return false;
         }
 
@@ -235,6 +239,12 @@ function reapplyJavaScript() {
         } else {
             return false; // One or more fields are missing or invalid
         }
+    }
+
+    function isValidEmail(email) {
+        // Regular expression for validating email addresses
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
     }
 
     function validateShareholders() {
@@ -390,7 +400,7 @@ function reapplyJavaScript() {
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="remove-beneficial-owner">
                             <path d="M3 3L13 13M3 13L13 3" stroke="#000000" stroke-width="1.6" stroke-linecap="square"/>
                             </svg>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -786,7 +796,7 @@ function reapplyJavaScript() {
         });
 
         $(document).on('click', '.remove-beneficial-owner', function () {
-            $(this).parent().remove();
+            $(this).parent().parent().parent().parent().remove();
             $('#number_of_beneficial_owners').val($('#beneficial_owner_wrapper > div').length);
 
             // Reset the owner count if there are no owners left

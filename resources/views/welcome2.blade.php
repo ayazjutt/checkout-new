@@ -14,11 +14,6 @@
         var state_amount = {{ $state_amount }};
         var countriesAll = <?php echo json_encode($countries_all); ?>;
     </script>
-    @if(!empty($country))
-        <script>
-            var additionalServicesData = <?php echo json_encode($country->additional_services); ?>;
-        </script>
-    @endif
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -71,6 +66,12 @@
 </head>
 
 <body class="antialiased relative">
+@if(!empty($country))
+    <script>
+        var additionalServicesData = <?php echo json_encode($country->additional_services); ?>;
+    </script>
+@endif
+
 <div class="fixed top-0 left-0 w-full h-full bg-white opacity-75 z-50 overflow-hidden pointer-events-none" id="loader" style="display: none">
     <div class="flex justify-center items-center h-full">
         <div class="animate-spin text-violet-600 fas fa-circle-notch fa-5x"></div>
