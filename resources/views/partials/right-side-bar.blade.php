@@ -1,4 +1,4 @@
-<div class="lg:block hidden col-span-2 bg-amber-900 relative shadow-md bg-cover bg-center"
+<div class="lg:block hidden col-span-2 relative shadow-md bg-cover bg-center"
     style="background-image: url('assets/images/rightSidebarBgImage.png');">
     <div class="text-white sticky top-0 flex flex-col items-center">
         <div class="flex items-center justify-center pt-4 pb-[70px] w-full"></div>

@@ -3,7 +3,7 @@
     <p class='font-sans font-normal text-xs text-[#FFFFFF]'>A short details for company type. </p>
 
     <div class="bg-[#626262] mt-6 p-6 rounded-xl">
-        <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-4">
+        <div class="grid grid-cols-2 gap-x-10 gap-y-4">
             <div class="flex flex-col space-y-1">
                 <label class="font-sans text-sm font-normal">
                     Proposal Name # 1
@@ -54,10 +54,10 @@
 
                 <input type="hidden" name="number_of_beneficial_owners" id="number_of_beneficial_owners" value="1">
 
-                <button type="button"
+                <!-- <button type="button"
                         class="bg-black font-normal text-xs text-white rounded-md py-1 w-14">
                     Add
-                </button>
+                </button> -->
             </div>
         </div>
 
@@ -65,9 +65,24 @@
         </div>
 
         <div class="px-8 mt-8 mb-2">
-            <button type="button" class="bg-black font-normal text-xs text-white rounded-md py-1 w-full add-beneficial-owner">
+            <!-- <button type="button" class="bg-black font-normal text-xs text-white rounded-md py-1 w-full add-beneficial-owner">
                 Add Another +
-            </button>
+            </button> -->
+
+            <div class="relative">
+                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                    <div class="w-full border-t border-gray-300"></div>
+                </div>
+                <div class="relative flex justify-center">
+                    <button
+                    type="button"
+                    class="add-beneficial-owner inline-flex items-center gap-x-1.5 rounded-full bg-white px-6 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                    >
+                    + Add
+                    </button>
+                </div>
+            </div>
+                
         </div>
     </div>
 
@@ -80,7 +95,7 @@
             </div>
         </div>
 
-        <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-4">
+        <div class="grid grid-cols-2 gap-x-10 gap-y-4">
             <div class="flex flex-col space-y-1">
                 <label class="font-sans text-sm font-normal">
                     Full Name

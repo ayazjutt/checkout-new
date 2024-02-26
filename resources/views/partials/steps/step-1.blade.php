@@ -160,7 +160,7 @@
                     value="{{ $processing_type->id }}"
                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 processing-type-radio"
                     data-amount="{{ $processing_type->amount }}" />
-                    <label for="processingType{{ $processing_type->id }}" class="font-semibold text-white text-base ml-3">
+                    <label for="processingType{{ $processing_type->id }}" class="cursor-pointer font-semibold text-white text-base ml-3">
                         {{ $processing_type->name }}
                     </label>
             </div>

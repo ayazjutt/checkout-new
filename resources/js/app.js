@@ -360,24 +360,27 @@ function reapplyJavaScript() {
                         <label class="font-sans text-sm font-normal">
                             Nationality
                         </label>
-                        <div class="selectWrapper">
-                            <select class="selectBox" name="beneficial_nationality${ownerCount}" id="beneficial_nationality${ownerCount}">
-                                <option></option>`;
-        countriesAll.forEach(function (country) {
-            newOwner += `<option value="${country.name}">${country.name}</option>`;
-        });
+                        <div class="flex items-center space-x-4">
+                            <div class="selectWrapper w-full">
+                                <select class="selectBox" name="beneficial_nationality${ownerCount}" id="beneficial_nationality${ownerCount}">
+                                    <option></option>`;
+                                        countriesAll.forEach(function (country) {
+                                            newOwner += `<option value="${country.name}">${country.name}</option>`;
+                                        });
 
-        newOwner += `
-                            </select>
-                            <span id="beneficial_nationality_${ownerCount}_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
-                                This Field is required!
-                            </span>
+                                        newOwner += `
+                                </select>
+                                <span id="beneficial_nationality_${ownerCount}_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
+                                    This Field is required!
+                                </span>
+                            </div>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="remove-beneficial-owner">
+                            <path d="M3 3L13 13M3 13L13 3" stroke="#000000" stroke-width="1.6" stroke-linecap="square"/>
+                            </svg>
+                            
                         </div>
                     </div>
                 </div>
-                <button type="button" class="bg-red-700 font-normal text-xs text-white rounded-md py-1 w-14 remove-beneficial-owner">
-                    remove
-                </button>
             </div>
         `;
 

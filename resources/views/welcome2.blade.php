@@ -81,7 +81,7 @@
     </div>
 </div>
 
-<form class="lg:h-full relative lg:pb-0 pb-36" action="{{ route('checkout') }}" method="post" id="registerForm" name="registerForm">
+<form class="lg:h-full relative lg:pb-0" action="{{ route('checkout') }}" method="post" id="registerForm" name="registerForm">
 
     @csrf
     <!-- Mobile Header -->
@@ -177,7 +177,7 @@
         </div>
     </div>
 
-    <div class="lg:hidden block absolute bottom-0 h-36 bg-white text-black w-full rounded-tl-2xl rounded-tr-2xl" id="bottomDiv">
+    <div class="lg:hidden block sticky bottom-0 h-36 bg-white text-black w-full rounded-tl-2xl rounded-tr-2xl" id="bottomDiv">
         <div class="w-full flex items-center justify-center mobile-summary">
             <div class="h-1 bg-[#8E5D0B] w-40 my-2 rounded"></div>
         </div>
