@@ -66,9 +66,29 @@
                             order</button>
                     </div>
                 </div>
-                <div class="-mx-4 mt-8 sm:-mx-0">
-                    <table class="min-w-full divide-y divide-gray-300 bg-white shadow-md rounded-md">
-                        <thead>
+                <div class="mt-4 bg-white shadow-md rounded-md">
+                    <div class="px-4 py-6">
+                        <div class="flex items-center justify-between">
+                            <input type="text" class="rounded-md px-2 py-2 outline-none border" placeholder="Search" />
+                            <div class="flex items-center space-x-3">
+                                <input type="date" class="rounded-md px-2 py-2 outline-none border"
+                                    placeholder="Pick Date range" />
+                                <div class="h-full">
+                                    <select id="location" name="location"
+                                        class="h-11 block bg-white outline-none w-full rounded-md border py-1.5 pl-3 pr-10 text-gray-900 sm:text-sm sm:leading-6">
+                                        <option>United States</option>
+                                        <option selected>Canada</option>
+                                        <option>Mexico</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr />
+                    <table class="min-w-full divide-y divide-gray-300">
+                        <!-- <thead>
                             <tr>
                                 <th scope="col"
                                     class="py-3.5 text-center text-sm font-semibold text-gray-900">
@@ -105,563 +125,420 @@
                                     <span class="sr-only">Edit</span>
                                 </th>
                             </tr>
-                        </thead>
+                        </thead> -->
                         <tbody class="divide-y divide-gray-200 bg-white">
                             <tr>
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     United States
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     February 26, 2024 at 10:11 PM
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     Wyoming
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC Formation
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     ABC LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     480
                                 </td>
 
-                                <td
-                                    class="capitalize text-center py-4 text-sm font-normal  text-gray-900">
-                                    <p class="bg-[#CFF1E6] text-[#11B981] rounded-lg">Completed</p>
+                                <td class="capitalize text-center py-4 px-4 text-xs font-normal">
+                                    <p class="bg-[#CFF1E6] text-[#11B981] rounded-lg py-1">Completed</p>
                                 </td>
 
 
                             </tr>
 
                             <tr>
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     United States
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     February 26, 2024 at 10:11 PM
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     Wyoming
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC Formation
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     ABC LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     480
                                 </td>
 
-                                <td
-                                    class="capitalize text-center py-4 text-sm font-normal  text-gray-900">
-                                    <p class="bg-[#CFEDFB] text-[#0EA5E9] rounded-lg">Pending</p>
+                                <td class="capitalize text-center py-4 px-4 text-xs font-normal">
+                                    <p class="bg-[#CFEDFB] text-[#0EA5E9] rounded-lg py-1">Pending</p>
                                 </td>
 
 
                             </tr>
 
                             <tr>
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     United States
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     February 26, 2024 at 10:11 PM
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     Wyoming
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC Formation
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     ABC LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     480
                                 </td>
 
-                                <td
-                                    class="capitalize text-center py-4 text-sm font-normal  text-gray-900">
-                                    <p class="bg-[#FFF1D4] text-[#FFBB2A] rounded-lg">Processing</p>
+                                <td class="capitalize text-center py-4 px-4 text-xs font-normal">
+                                    <p class="bg-[#FFF1D4] text-[#FFBB2A] rounded-lg py-1">Processing</p>
                                 </td>
 
 
                             </tr>
 
                             <tr>
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     United States
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     February 26, 2024 at 10:11 PM
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     Wyoming
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC Formation
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     ABC LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     480
                                 </td>
 
-                                <td
-                                    class="capitalize text-center py-4 text-sm font-normal  text-gray-900">
-                                    <p class="bg-[#F9D2DA] text-[#E11D48] rounded-lg">Failed</p>
+                                <td class="capitalize text-center py-4 px-4 text-xs font-normal">
+                                    <p class="bg-[#F9D2DA] text-[#E11D48] rounded-lg py-1">Failed</p>
                                 </td>
 
 
                             </tr>
 
                             <tr>
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     United States
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     February 26, 2024 at 10:11 PM
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     Wyoming
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC Formation
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     ABC LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     480
                                 </td>
 
-                                <td
-                                    class="capitalize text-center py-4 text-sm font-normal  text-gray-900">
-                                    <p class="bg-[#CFF1E6] text-[#11B981] rounded-lg">Completed</p>
+                                <td class="capitalize text-center py-4 px-4 text-xs font-normal">
+                                    <p class="bg-[#CFF1E6] text-[#11B981] rounded-lg py-1">Completed</p>
                                 </td>
 
 
                             </tr>
 
                             <tr>
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     United States
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     February 26, 2024 at 10:11 PM
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     Wyoming
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC Formation
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     ABC LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     480
                                 </td>
 
-                                <td
-                                    class="capitalize text-center py-4 text-sm font-normal  text-gray-900">
-                                    <p class="bg-[#CFEDFB] text-[#0EA5E9] rounded-lg">Pending</p>
+                                <td class="capitalize text-center py-4 px-4 text-xs font-normal">
+                                    <p class="bg-[#CFEDFB] text-[#0EA5E9] rounded-lg py-1">Pending</p>
                                 </td>
 
 
                             </tr>
 
                             <tr>
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     United States
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     February 26, 2024 at 10:11 PM
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     Wyoming
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC Formation
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     ABC LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     480
                                 </td>
 
-                                <td
-                                    class="capitalize text-center py-4 text-sm font-normal  text-gray-900">
-                                    <p class="bg-[#FFF1D4] text-[#FFBB2A] rounded-lg">Processing</p>
+                                <td class="capitalize text-center py-4 px-4 text-xs font-normal">
+                                    <p class="bg-[#FFF1D4] text-[#FFBB2A] rounded-lg py-1">Processing</p>
                                 </td>
 
 
                             </tr>
 
                             <tr>
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     United States
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     February 26, 2024 at 10:11 PM
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     Wyoming
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC Formation
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     ABC LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     480
                                 </td>
 
-                                <td
-                                    class="capitalize text-center py-4 text-sm font-normal  text-gray-900">
-                                    <p class="bg-[#F9D2DA] text-[#E11D48] rounded-lg">Failed</p>
+                                <td class="capitalize text-center py-4 px-4 text-xs font-normal">
+                                    <p class="bg-[#F9D2DA] text-[#E11D48] rounded-lg py-1">Failed</p>
                                 </td>
 
 
                             </tr>
 
                             <tr>
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     United States
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     February 26, 2024 at 10:11 PM
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     Wyoming
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC Formation
                                 </td>
 
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     ABC LLC
                                 </td>
 
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
+                                <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
                                     480
                                 </td>
 
-                                <td
-                                    class="capitalize text-center py-4 text-sm font-normal  text-gray-900">
-                                    <p class="bg-[#CFF1E6] text-[#11B981] rounded-lg">Completed</p>
+                                <td class="capitalize text-center py-4 px-4 text-xs font-normal">
+                                    <p class="bg-[#CFF1E6] text-[#11B981] rounded-lg py-1">Completed</p>
                                 </td>
 
 
                             </tr>
-
-                            <tr>
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    United States
-                                </td>
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    February 26, 2024 at 10:11 PM
-                                </td>
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    Wyoming
-                                </td>
-
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    LLC Formation
-                                </td>
-
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    LLC
-                                </td>
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    ABC LLC
-                                </td>
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    480
-                                </td>
-
-                                <td
-                                    class="capitalize text-center py-4 text-sm font-normal  text-gray-900">
-                                    <p class="bg-[#CFEDFB] text-[#0EA5E9] rounded-lg">Pending</p>
-                                </td>
-
-
-                            </tr>
-
-                            <tr>
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    United States
-                                </td>
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    February 26, 2024 at 10:11 PM
-                                </td>
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    Wyoming
-                                </td>
-
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    LLC Formation
-                                </td>
-
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    LLC
-                                </td>
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    ABC LLC
-                                </td>
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    480
-                                </td>
-
-                                <td
-                                    class="capitalize text-center py-4 text-sm font-normal  text-gray-900">
-                                    <p class="bg-[#FFF1D4] text-[#FFBB2A] rounded-lg">Processing</p>
-                                </td>
-
-
-                            </tr>
-
-                            <tr>
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    United States
-                                </td>
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    February 26, 2024 at 10:11 PM
-                                </td>
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    Wyoming
-                                </td>
-
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    LLC Formation
-                                </td>
-
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    LLC
-                                </td>
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    ABC LLC
-                                </td>
-
-                                <td
-                                    class="text-center py-4 text-sm font-medium text-gray-900">
-                                    480
-                                </td>
-
-                                <td
-                                    class="capitalize text-center py-4 text-sm font-normal  text-gray-900">
-                                    <p class="bg-[#F9D2DA] text-[#E11D48] rounded-lg">Failed</p>
-                                </td>
-
-
-                            </tr>
-
-
                         </tbody>
                     </table>
+
+
+                    <!-- <div class="mt-5 flex items-center justify-between px-4 py-4">
+                        <p class="text-[#3D475C] text-sm font-normal"><span class="text-[#9499A1]">Showing:</span> &nbsp;&nbsp;&nbsp; 40 of 20</p>
+                        <div>
+
+
+                        </div>
+                    </div> -->
+                    <div class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+                        <div class="flex flex-1 justify-between sm:hidden">
+                            <a href="#"
+                                class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</a>
+                            <a href="#"
+                                class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Next</a>
+                        </div>
+                        <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+                            <div>
+                                <p class="text-sm text-gray-700">
+                                    Showing
+                                    <span class="font-medium">1</span>
+                                    to
+                                    <span class="font-medium">10</span>
+                                    of
+                                    <span class="font-medium">97</span>
+                                    results
+                                </p>
+                            </div>
+                            <div>
+                                <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm"
+                                    aria-label="Pagination">
+                                    <a href="#"
+                                        class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                                        <span class="sr-only">Previous</span>
+                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                    <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
+                                    <a href="#" aria-current="page"
+                                        class="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
+                                    <a href="#"
+                                        class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">2</a>
+                                    <a href="#"
+                                        class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
+                                    <span
+                                        class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">...</span>
+                                    <a href="#"
+                                        class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">8</a>
+                                    <a href="#"
+                                        class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">9</a>
+                                    <a href="#"
+                                        class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">10</a>
+                                    <a href="#"
+                                        class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                                        <span class="sr-only">Next</span>
+                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
