@@ -83,7 +83,7 @@
             @if(count($service_types))
             <div class="flex flex-col space-y-1">
                 <label class="font-sans text-sm font-normal">
-                    Corporation Type {{ count($service_types) }}
+                    Corporation Type
                 </label>
                 <div class="selectWrapper">
                     <select class="selectBox bg-[#FFFFFF99] text-black" name="service_type_id" id="serviceTypeDropdown">

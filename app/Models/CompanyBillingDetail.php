@@ -15,6 +15,7 @@ class CompanyBillingDetail extends Model
    * @var array
    */
   protected $fillable = [
+      'company_id',
     'name',
     'email',
     'personal_number',
