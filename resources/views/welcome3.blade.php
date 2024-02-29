@@ -18,16 +18,17 @@
 <body>
 
     <!-- Header -->
-    <div class="bg-[#11AE89] px-20 py-4">
+    <div class="bg-[#11AE89] lg:px-20 px-5 py-4">
         <div class="flex items-center justify-between">
             <img src="assets/images/new/menu.png" />
             <img src="assets/images/new/logo.png" />
             <p class="text-base font-normal text-white">John Doe</p>
         </div>
     </div>
-    <!-- Sidebar -->
-    <div class="flex w-full custom-height">
-        <div class="w-2/12 shadow-sm bg-white border-r-2 border-[#11AE89]">
+    <!-- Desktop View -->
+    <div class="hidden lg:flex w-full custom-height">
+        <!-- Sidebar -->
+        <div class=" w-1/12 shadow-sm bg-white border-r-2 border-[#11AE89]">
             <div class="flex flex-col justify-center space-y-6 mt-10">
                 <div class="flex flex-col items-center space-y-1 cursor-pointer">
                     <img class="w-7 h-7" src="assets/images/new/home.png" />
@@ -54,7 +55,9 @@
             </div>
 
         </div>
-        <div class="w-10/12 bg-[#F7FAF9] pt-20 px-20">
+
+        <!-- Desktop Table Content -->
+        <div class="w-11/12 bg-[#F7FAF9] pt-20 px-20">
             <div class="px-4 sm:px-6 lg:px-8">
                 <div class="sm:flex sm:items-center">
                     <div class="sm:flex-auto">
@@ -88,36 +91,36 @@
                     </div>
                     <hr />
                     <table class="min-w-full divide-y divide-gray-300">
-                        <!-- <thead>
+                        <thead>
                             <tr>
                                 <th scope="col"
-                                    class="py-3.5 text-center text-sm font-semibold text-gray-900">
+                                    class="py-3.5 text-center text-sm font-semibold text-[#3D475C]">
                                     Country
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 text-center text-sm font-semibold text-gray-900">
+                                    class="py-3.5 text-center text-sm font-semibold text-[#3D475C]">
                                     Date</th>
                                 <th scope="col"
-                                    class="py-3.5 text-center text-sm font-semibold text-gray-900">
+                                    class="py-3.5 text-center text-sm font-semibold text-[#3D475C]">
                                     State</th>
 
                                 <th scope="col"
-                                    class="py-3.5 text-center text-sm font-semibold text-gray-900">
+                                    class="py-3.5 text-center text-sm font-semibold text-[#3D475C]">
                                     Service</th>
                                 <th scope="col"
-                                    class="py-3.5 text-center text-sm font-semibold text-gray-900">
+                                    class="py-3.5 text-center text-sm font-semibold text-[#3D475C]">
                                     Type</th>
 
                                 <th scope="col"
-                                    class="py-3.5 text-center text-sm font-semibold text-gray-900">
+                                    class="py-3.5 text-center text-sm font-semibold text-[#3D475C]">
                                     Company Name</th>
 
                                 <th scope="col"
-                                    class="py-3.5 text-center text-sm font-semibold text-gray-900">
+                                    class="py-3.5 text-center text-sm font-semibold text-[#3D475C]">
                                     Amount</th>
 
                                 <th scope="col"
-                                    class="py-3.5 text-center text-sm font-semibold text-gray-900">
+                                    class="py-3.5 text-center text-sm font-semibold text-[#3D475C]">
                                     Status</th>
 
 
@@ -125,7 +128,7 @@
                                     <span class="sr-only">Edit</span>
                                 </th>
                             </tr>
-                        </thead> -->
+                        </thead>
                         <tbody class="divide-y divide-gray-200 bg-white">
                             <tr>
                                 <td class="text-center py-4 px-4 text-sm font-medium text-[#3D475C]">
@@ -544,8 +547,154 @@
 
 
         </div>
+    </div>
+
+    <!-- Mobile View -->
+
+    <div class="lg:hidden block px-5 py-4">
+        <div class="flex items-center space-x-2">
+            <input type="text" class="rounded-md px-2 py-2 w-full outline-none border" placeholder="Search" />
+        </div>
+
+        <div class="grid grid-cols-1 mt-4">
+            <div class="border rounded-md px-4 py-2 mb-4">
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">ID:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">1231231</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Status:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">Completed</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Amount:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">480</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Company Name:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">ABC LLC</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Date:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">30 April 2024</p>
+                </div>
+            </div>
+
+            <div class="border rounded-md px-4 py-2 mb-4">
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">ID:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">1231231</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Status:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">Completed</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Amount:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">480</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Company Name:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">ABC LLC</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Date:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">30 April 2024</p>
+                </div>
+            </div>
+
+            <div class="border rounded-md px-4 py-2 mb-4">
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">ID:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">1231231</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Status:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">Completed</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Amount:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">480</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Company Name:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">ABC LLC</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Date:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">30 April 2024</p>
+                </div>
+            </div>
+
+            <div class="border rounded-md px-4 py-2 mb-4">
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">ID:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">1231231</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Status:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">Completed</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Amount:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">480</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Company Name:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">ABC LLC</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Date:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">30 April 2024</p>
+                </div>
+            </div>
+
+            <div class="border rounded-md px-4 py-2 mb-4">
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">ID:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">1231231</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Status:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">Completed</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Amount:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">480</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Company Name:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">ABC LLC</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10">
+                    <p class="font-normal text-[#3D475C] text-base">Date:</p>
+                    <p class="font-normal text-[#3D475C] text-sm">30 April 2024</p>
+                </div>
+            </div>
+        </div>
 
     </div>
+
 </body>
 
 </html>
