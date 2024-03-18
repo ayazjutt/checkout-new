@@ -114,11 +114,11 @@ class Controller extends BaseController
                 'country_id' => ['The selected country does not exists.'],
             ]);
 
-        $social = Social::find($request->social_id);
-        if (!$social)
-            throw ValidationException::withMessages([
-                'social_id' => ['The selected social does not exists.'],
-            ]);
+//        $social = Social::find($request->social_id);
+//        if (!$social)
+//            throw ValidationException::withMessages([
+//                'social_id' => ['The selected social does not exists.'],
+//            ]);
 
         $processing_type = ProcessingType::find($request->processing_type);
         if (!$processing_type)
@@ -172,7 +172,7 @@ class Controller extends BaseController
 
         if ($request->payment_method === 'bank') {
             $user = $this->createUserAccount($request);
-            $company = $this->createCompany($request, $user, $service, $service_type, $processing_type, $state, $country, $social, $state_service_amount, $total_payable_amount, null, null);
+            $company = $this->createCompany($request, $user, $service, $service_type, $processing_type, $state, $country, $state_service_amount, $total_payable_amount, null, null);
 
             if (!empty($request->additional_services))
                 $this->addCompanyAdditionalServices($request, $company->id);
@@ -244,7 +244,7 @@ class Controller extends BaseController
         return $user;
     }
 
-    private function createCompany($request, $user, $service, $service_type, $processing_type, $state, $country, $social, $state_service_amount, $total_amount, $stripe_pay_id, $stripe_pay_receipt)
+    private function createCompany($request, $user, $service, $service_type, $processing_type, $state, $country, $state_service_amount, $total_amount, $stripe_pay_id, $stripe_pay_receipt)
     {
         $data = [
             'user_id' => $user->id,
@@ -253,7 +253,7 @@ class Controller extends BaseController
             'service_type_id' => !empty($service_type) ? $service_type->id : null,
             'state_id' => !empty($state) ? $state->id : null,
             'processing_type_id' => $processing_type->id,
-            'social_id' => $social->id,
+//            'social_id' => $social->id,
             'company_name_1' => $request->proposalName1,
             'company_name_2' => !empty($request->proposalName2) ? $request->proposalName2 : null,
             'company_name_3' => !empty($request->proposalName3) ? $request->proposalName3 : null,

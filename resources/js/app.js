@@ -123,13 +123,13 @@ function reapplyJavaScript() {
         var serviceType = $('#serviceTypeDropdown').val();
         var numberOfShareholders = $('#numberOfShareholders').val();
         var processingTypeRadio = $('.processing-type-radio:checked').length;
-        var socialId = $('#social_id').val();
+        //var socialId = $('#social_id').val();
 
-        if (!socialId) {
-            $("#social_error_msg").show();
-            showToast('How you know about us is required');
-            return false;
-        } else $("#social_error_msg").hide();
+        // if (!socialId) {
+        //     $("#social_error_msg").show();
+        //     showToast('How you know about us is required');
+        //     return false;
+        // } else $("#social_error_msg").hide();
         if (!numberOfShareholders) {
             $("#shareholder_error_msg").show();
             showToast('shareholder number is required');

@@ -26,7 +26,7 @@ class CheckoutRequest extends FormRequest
             'state_id' => 'nullable|numeric|exists:states,id',
             'service_id' => 'required|numeric|exists:services,id',
             'service_type_id' => 'nullable|numeric|exists:service_types,id',
-            'social_id' => 'required|numeric|exists:socials,id',
+//            'social_id' => 'required|numeric|exists:socials,id',
             'processing_type' => 'required|numeric|exists:processing_types,id',
 
             'proposalName1' => 'required|string',

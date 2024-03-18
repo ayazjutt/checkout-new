@@ -112,11 +112,11 @@
             </div>
         </div>
 
-        <p class="mt-4 mb-2 font-semibold text-base font-sans text-white">Special Request:</p>
-        <div class="grid lg:grid-cols-12 grid-cols-1 gap-5 ">
-            <div class="col-span-12 bg-[#F6F6F699] rounded-md p-4">
-                <p class='font-sans font-normal text-[12px] text-[#343434] mb-4' id="preview_special_request"></p>
-            </div>
-        </div>
+{{--        <p class="mt-4 mb-2 font-semibold text-base font-sans text-white">Special Request:</p>--}}
+{{--        <div class="grid lg:grid-cols-12 grid-cols-1 gap-5 ">--}}
+{{--            <div class="col-span-12 bg-[#F6F6F699] rounded-md p-4">--}}
+{{--                <p class='font-sans font-normal text-[12px] text-[#343434] mb-4' id="preview_special_request"></p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 </div>

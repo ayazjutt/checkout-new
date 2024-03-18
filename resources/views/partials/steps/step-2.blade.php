@@ -194,21 +194,21 @@
         </div>
     </div>
 
-    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
-        <div class="flex items-center justify-between mb-4">
-            <div class="flex items-center justify-between w-full">
-                <p class="font-sans text-lg font-bold text-[#5white">
-                    Special Request
-                </p>
-            </div>
-        </div>
+{{--    <div class="bg-[#626262] mt-6 p-6 rounded-xl">--}}
+{{--        <div class="flex items-center justify-between mb-4">--}}
+{{--            <div class="flex items-center justify-between w-full">--}}
+{{--                <p class="font-sans text-lg font-bold text-[#5white">--}}
+{{--                    Special Request--}}
+{{--                </p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
-        <div class="grid grid-cols-1">
-            <div class="flex flex-col space-y-1">
-                <textarea name="special_request" id="special_request"
-                    class="block w-full rounded-md bg-[#F6F6F699] border-0 px-2 py-1.5 text-gray-900 h-20 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
-            </div>
-        </div>
-    </div>
+{{--        <div class="grid grid-cols-1">--}}
+{{--            <div class="flex flex-col space-y-1">--}}
+{{--                <textarea name="special_request" id="special_request"--}}
+{{--                    class="block w-full rounded-md bg-[#F6F6F699] border-0 px-2 py-1.5 text-gray-900 h-20 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
 </div>

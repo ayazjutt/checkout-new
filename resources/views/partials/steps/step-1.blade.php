@@ -168,33 +168,33 @@
         @endforeach
     </div>
 
-    <div class="bg-[#626262] mt-6 lg:p-6 p-4 rounded-xl">
-        <div class="flex items-center justify-between">
-            <p class="font-sans text-lg font-medium text-white">
-                How did you know about us?
-            </p>
-        </div>
-        <div class="mt-4">
-            <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+{{--    <div class="bg-[#626262] mt-6 lg:p-6 p-4 rounded-xl">--}}
+{{--        <div class="flex items-center justify-between">--}}
+{{--            <p class="font-sans text-lg font-medium text-white">--}}
+{{--                How did you know about us?--}}
+{{--            </p>--}}
+{{--        </div>--}}
+{{--        <div class="mt-4">--}}
+{{--            <div class="flex flex-col space-y-1">--}}
+{{--                <label class="font-sans text-sm font-normal">--}}
 
-                </label>
-                <div class="selectWrapper">
-                    <select class="selectBox bg-[#FFFFFF99] w-full" name="social_id" id="social_id">
-                        <option></option>
-                        @foreach($socials as $social)
-                        <option value="{{ $social->id }}">{{ $social->title }}</option>
-                        @endforeach
-                    </select>
-                    <span id="social_error_msg"
-                        class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg"
-                        style="display: none">
-                        This Field is required!
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--                </label>--}}
+{{--                <div class="selectWrapper">--}}
+{{--                    <select class="selectBox bg-[#FFFFFF99] w-full" name="social_id" id="social_id">--}}
+{{--                        <option></option>--}}
+{{--                        @foreach($socials as $social)--}}
+{{--                        <option value="{{ $social->id }}">{{ $social->title }}</option>--}}
+{{--                        @endforeach--}}
+{{--                    </select>--}}
+{{--                    <span id="social_error_msg"--}}
+{{--                        class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg"--}}
+{{--                        style="display: none">--}}
+{{--                        This Field is required!--}}
+{{--                    </span>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </div>
 
 
