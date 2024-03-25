@@ -19,6 +19,7 @@ class CompanyShareholder extends Model
     'company_id',
     'country_id',
     'percentage',
+    'position_id'
   ];
 
   /**
