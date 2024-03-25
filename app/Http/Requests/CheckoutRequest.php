@@ -34,7 +34,7 @@ class CheckoutRequest extends FormRequest
             'proposalName3' => 'string|nullable',
 
             'number_of_shareholders' => 'required|numeric|min:1',
-            'number_of_beneficial_owners' => 'required|numeric|min:1',
+//            'number_of_beneficial_owners' => 'required|numeric|min:1',
 
             'billing_name' => 'required|string',
             'billing_email' => 'required|email',

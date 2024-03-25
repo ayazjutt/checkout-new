@@ -49,47 +49,6 @@
         <div class="flex items-center justify-between mb-4">
             <div class="flex items-center justify-between w-full">
                 <p class="font-sans text-lg font-bold text-[#5white">
-                    Beneficial Owner
-                </p>
-
-                <input type="hidden" name="number_of_beneficial_owners" id="number_of_beneficial_owners" value="1">
-
-                <!-- <button type="button"
-                        class="bg-black font-normal text-xs text-white rounded-md py-1 w-14">
-                    Add
-                </button> -->
-            </div>
-        </div>
-
-        <div id="beneficial_owner_wrapper">
-        </div>
-
-        <div class="px-8 mt-8 mb-2">
-            <!-- <button type="button" class="bg-black font-normal text-xs text-white rounded-md py-1 w-full add-beneficial-owner">
-                Add Another +
-            </button> -->
-
-            <div class="relative">
-                <div class="absolute inset-0 flex items-center" aria-hidden="true">
-                    <div class="w-full border-t border-gray-300"></div>
-                </div>
-                <div class="relative flex justify-center">
-                    <button
-                    type="button"
-                    class="add-beneficial-owner inline-flex items-center gap-x-1.5 rounded-full bg-white px-6 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                    >
-                    + Add
-                    </button>
-                </div>
-            </div>
-                
-        </div>
-    </div>
-
-    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
-        <div class="flex items-center justify-between mb-4">
-            <div class="flex items-center justify-between w-full">
-                <p class="font-sans text-lg font-bold text-[#5white">
                     Billing Details
                 </p>
             </div>

@@ -182,10 +182,10 @@ function reapplyJavaScript() {
             showToast('Shareholder data are missing');
             return false;
         }
-        if (!validateBeneficialOwners()) {
-            showToast('Beneficial owner fields are missing');
-            return false;
-        }
+        // if (!validateBeneficialOwners()) {
+        //     showToast('Beneficial owner fields are missing');
+        //     return false;
+        // }
 
         if (!billing_name) {
             $("#billing_name_error_msg").show();
@@ -234,7 +234,7 @@ function reapplyJavaScript() {
         }
 
         // Check if all required fields have valid values
-        if (proposalName1 && proposalName3 && proposalName3 && validateShareholders() && validateBeneficialOwners()) {
+        if (proposalName1 && proposalName3 && proposalName3 && validateShareholders()) {
             return true; // All fields are valid
         } else {
             return false; // One or more fields are missing or invalid
@@ -365,6 +365,9 @@ function reapplyJavaScript() {
 
                 <p class='font-sans font-medium text-[10px] text-[#343434] mt-4'>Percentage:</p>
                 <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_shareholder_percentage${i}">-</p>
+
+                <p class='font-sans font-medium text-[10px] text-[#343434] mt-4'>Position:</p>
+                <p class='font-sans font-medium text-sm text-[#343434] pt-1.5' id="preview_shareholder_position${i}">-</p>
             </div>`;
             $('#shareholders_preview_wrapper').append(previewHtml);
         }
@@ -517,7 +520,7 @@ function reapplyJavaScript() {
         if (id === 'proposalName1') $("#preview_proposal_name_1").html(value);
         if (id === 'proposalName2') $("#preview_proposal_name_2").html(value);
         if (id === 'proposalName3') $("#preview_proposal_name_3").html(value);
-        if (id === 'special_request') $("#preview_special_request").html(value);
+        // if (id === 'special_request') $("#preview_special_request").html(value);
 
         if (id === 'billing_name') $("#preview_billing_name").html(value);
         if (id === 'billing_email') $("#preview_billing_email").html(value);
@@ -830,7 +833,7 @@ function reapplyJavaScript() {
                 ownerCount--;
             }
 
-            renderBeneficialPreview()
+            // renderBeneficialPreview()
         });
 
         // Click event listener for add button
@@ -852,7 +855,7 @@ function reapplyJavaScript() {
             }
 
             renderPreview(inputId, inputValue);
-            renderBeneficialPreview()
+            // renderBeneficialPreview()
         });
 
         $(document).on('change', 'select', function () {
@@ -868,8 +871,11 @@ function reapplyJavaScript() {
                 errorMsg.show();
             }
 
+            if (inputId.indexOf("shareholder_position") !== -1) {
+                inputValue = $("#"+inputId+" option:selected").text();
+            }
             renderPreview(inputId, inputValue);
-            renderBeneficialPreview()
+            // renderBeneficialPreview()
         });
 
         $('.payment_method_radio').on('change', function () {

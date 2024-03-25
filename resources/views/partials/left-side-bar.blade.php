@@ -45,7 +45,7 @@
                                 Company Details
                             </span>
                             <span class="text-sm text-gray-500">
-                                Shareholders and beneficial owners
+                                Shareholders
                             </span>
                         </span>
                     </a>

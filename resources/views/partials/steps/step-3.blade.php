@@ -73,9 +73,6 @@
         <p class="mt-4 mb-2 font-semibold text-base font-sans text-white">Shareholders</p>
         <div class="grid lg:grid-cols-12 grid-cols-1 gap-5" id="shareholders_preview_wrapper"></div>
 
-        <p class="mt-4 mb-2 font-semibold text-base font-sans text-white">Beneficial Owners</p>
-        <div class="grid lg:grid-cols-12 grid-cols-1 gap-5" id="beneficial_preview_wrapper"></div>
-
         <p class="mt-4 mb-2 font-semibold text-base font-sans text-white">Billing Information:</p>
         <div class="grid lg:grid-cols-12 grid-cols-1 gap-5 ">
             <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">
