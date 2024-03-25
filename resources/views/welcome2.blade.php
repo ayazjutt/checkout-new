@@ -13,6 +13,7 @@
         var checkout_post_route = '{{ route('checkout') }}';
         var state_amount = {{ $state_amount }};
         var countriesAll = <?php echo json_encode($countries_all); ?>;
+        var positions = <?php echo json_encode($positions); ?>;
     </script>
 
     <!-- Fonts -->

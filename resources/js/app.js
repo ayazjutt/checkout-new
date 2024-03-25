@@ -315,11 +315,10 @@ function reapplyJavaScript() {
                     <label class="font-sans text-sm font-normal">Nationality</label>
                     <div class="selectWrapper">
                         <select class="selectBox h-12 bg-[#FFFFFF99] text-black" id="shareholder_nationality${i}" name="shareholder_nationality${i}"><option></option>`;
-            // Loop through countriesAll to generate options
-            countriesAll.forEach(function (country) {
-                html += `<option value="${country.name}">${country.name}</option>`;
-            });
-
+                        // Loop through countriesAll to generate options
+                        countriesAll.forEach(function (country) {
+                            html += `<option value="${country.name}">${country.name}</option>`;
+                        });
             html += `
                         </select>
                         <span id="shareholder_nationality_${i}_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
@@ -334,6 +333,21 @@ function reapplyJavaScript() {
                         <span id="shareholder_percentage_${i}_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
                             Please enter a valid percentage (between 0 and 100)
                         </span>
+                </div>
+                <div class="flex flex-col space-y-1 w-full">
+                    <label class="font-sans text-sm font-normal">Position</label>
+                    <div class="selectWrapper">
+                        <select class="selectBox h-12 bg-[#FFFFFF99] text-black" id="shareholder_position${i}" name="shareholder_position${i}"><option></option>`;
+                        // Loop through countriesAll to generate options
+                        positions.forEach(function (position) {
+                            html += `<option value="${position.id}">${position.name}</option>`;
+                        });
+            html += `
+                        </select>
+                        <span id="shareholder_position_${i}_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
+                            This Field is required!
+                        </span>
+                    </div>
                 </div>
             </div>
         `;

@@ -12,6 +12,7 @@ use App\Models\CompanyBeneficialOwner;
 use App\Models\CompanyBillingDetail;
 use App\Models\CompanyShareholder;
 use App\Models\Country;
+use App\Models\Position;
 use App\Models\ProcessingType;
 use App\Models\Service;
 use App\Models\ServiceType;
@@ -53,14 +54,11 @@ class Controller extends BaseController
         $states = null;
         if ($country && $country->show_states)
             $states = State::where('country_id', $country->id)->orderby('name', 'asc')->get();
-
-        $state = null;
+            $state = null;
         if (!empty($states))
             foreach ($states as $stateObj)
                 if ($stateObj->name == $state_name)
                     $state = $stateObj;
-
-
         $services = null;
         if ($country)
             $services = Service::where('country_id', $country->id)->orderby('name', 'asc')->get();
@@ -89,7 +87,7 @@ class Controller extends BaseController
             $state_service_amount = StateServiceAmount::where('state_id', $state->id)->where('service_id', $service->id)->first();
             $state_amount = !empty($state_service_amount) ? $state_service_amount->amount : 0;
         }
-
+        $positions = Position::all();
         return view('welcome2', compact('countries',
             'states',
             'services',
@@ -101,7 +99,8 @@ class Controller extends BaseController
             'processing_types',
             'socials',
             'state_amount',
-            'countries_all'
+            'countries_all',
+            'positions'
         ));
     }
 
@@ -297,6 +296,7 @@ class Controller extends BaseController
                 'country_id' => $country->id,
                 'name' => $request->input("shareholder_name$x"),
                 'percentage' => $request->input("shareholder_percentage$x"),
+                'position_id' => $request->input("shareholder_position$x")
             ]);
         }
     }
