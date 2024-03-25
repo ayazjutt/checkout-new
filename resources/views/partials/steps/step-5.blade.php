@@ -19,9 +19,9 @@
 
 {{--                </div>--}}
                 <div class="flex items-center rounded-xl bg-[#8E5D0B] p-4 cursor-pointer">
-                    <div class="ml-4 w-56 text-white font-bold">
+                    <a class="ml-4 w-56 text-white font-bold" href="https://app.bizvee.com">
                         Click here to track your order
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>

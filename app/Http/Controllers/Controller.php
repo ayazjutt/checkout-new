@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CheckoutRequest;
+use App\Jobs\SendUserAccountEmail;
 use App\Mail\ThankYouEmail;
 use App\Models\AdditionalService;
 use App\Models\Company;
@@ -231,15 +232,14 @@ class Controller extends BaseController
             // User does not exist, create a new user
             $password = Str::random(10); // Generate a random password
             $user = User::create([
-                'name' => 'Example User', // Set a default name if needed
+                'name' => $request->billing_name, // Set a default name if needed
                 'email' => $request->billing_email,
                 'password' => bcrypt($password), // Hash the password
             ]);
 
             // Send an email with the user's email and password
-//            Mail::raw("Your email: $request->billing_email\nYour password: $password", function ($message) use ($request) {
-//                $message->to($request->billing_email)->subject('Bizvee Account Details');
-//            });
+            SendUserAccountEmail::dispatch($request->billing_email, $password);
+
         }
         return $user;
     }
