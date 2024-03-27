@@ -1,21 +1,21 @@
 <div id="step-4-wrapper" style="display: none;">
 
 
-    <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Payment</p>
-    <div class="bg-[#626262] mt-6 mb-6 p-6 rounded-xl">
-        <p class="text-white text-xl font-medium mb-4">Select your payment method</p>
+    <p class='font-sans font-semibold text-[28px] text-[#3F4254]'>Payment</p>
+    <div class="bg-white shadow-md mt-6 mb-6 p-6 rounded-xl">
+        <p class="text-[#3F4254] text-xl font-medium mb-4">Select your payment method</p>
 
         <div class="flex items-center space-x-20">
             <div class="flex items-center mb-4">
                 <input id="online-method-checkbox" type="radio" value="online" name="payment_method" checked
                        class="w-4 h-4 text-[#11AE89] bg-gray-100 border-gray-300 rounded focus:ring-[#11AE89] payment_method_radio">
-                <label for="online-method-checkbox" class="ms-2 text-sm font-medium text-white">Card</label>
+                <label for="online-method-checkbox" class="ms-2 text-sm font-medium text-[#3F4254]">Card</label>
             </div>
 
             <div class="flex items-center mb-4">
                 <input id="bank-method-checkbox" type="radio" value="bank" name="payment_method"
                        class="w-4 h-4 text-[#11AE89] bg-gray-100 border-gray-300 rounded focus:ring-[#11AE89] payment_method_radio">
-                <label for="bank-method-checkbox" class="ms-2 text-sm font-medium text-white">Bank</label>
+                <label for="bank-method-checkbox" class="ms-2 text-sm font-medium text-[#3F4254]">Bank</label>
             </div>
         </div>
     </div>
@@ -25,41 +25,41 @@
         <span class="error-message" id="paymentError"></span>
     </div>
 
-    <div class="bg-[#626262] mt-6 mb-6 p-6 rounded-xl" style="display: none;" id="bank_payment_method">
-        <p class="text-white text-xl font-medium">Bank Information</p>
+    <div class="bg-white shadow-md mt-6 mb-6 p-6 rounded-xl" style="display: none;" id="bank_payment_method">
+        <p class="text-[#3F4254] text-xl font-medium">Bank Information</p>
         <div class="mt-4">
 
             <div class="grid grid-cols-2">
-                <p class="text-white font-bold text-lg">Instructions:</p>
-                <p class="text-white font-normal text-base">Bank Instructions</p>
+                <p class="text-[#3F4254] font-bold text-lg">Instructions:</p>
+                <p class="text-[#3F4254] font-normal text-base">Bank Instructions</p>
             </div>
 
             <div class="grid grid-cols-2">
-                <p class="text-white font-bold text-lg">Bank Name:</p>
-                <p class="text-white font-normal text-base">Meezan Bank</p>
-            </div>
-
-
-            <div class="grid grid-cols-2">
-                <p class="text-white font-bold text-lg">Account name:</p>
-                <p class="text-white font-normal text-base">BIZVEE CONSULTANTS</p>
+                <p class="text-[#3F4254] font-bold text-lg">Bank Name:</p>
+                <p class="text-[#3F4254] font-normal text-base">Meezan Bank</p>
             </div>
 
 
             <div class="grid grid-cols-2">
-                <p class="text-white font-bold text-lg">Account number:</p>
-                <p class="text-white font-normal text-base">0201-0107487191</p>
+                <p class="text-[#3F4254] font-bold text-lg">Account name:</p>
+                <p class="text-[#3F4254] font-normal text-base">BIZVEE CONSULTANTS</p>
+            </div>
+
+
+            <div class="grid grid-cols-2">
+                <p class="text-[#3F4254] font-bold text-lg">Account number:</p>
+                <p class="text-[#3F4254] font-normal text-base">0201-0107487191</p>
             </div>
 
             <div class="grid grid-cols-2">
-                <p class="text-white font-bold text-lg">IBAN:</p>
-                <p class="text-white font-normal text-base">PK02MEZN0002010107487191</p>
+                <p class="text-[#3F4254] font-bold text-lg">IBAN:</p>
+                <p class="text-[#3F4254] font-normal text-base">PK02MEZN0002010107487191</p>
             </div>
 
             <hr class="mt-8">
 
             <div class="mt-8">
-                <label class="font-sans text-sm font-normal text-white">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     <span class="text-[#FF0000]">*</span>Transaction Id
                 </label>
                 <input type="text" name="transaction_id" id="transaction_id"

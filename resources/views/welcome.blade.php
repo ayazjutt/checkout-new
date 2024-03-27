@@ -161,7 +161,7 @@
                             <li class="{{ $stepIdx !== count($steps) - 1 ? 'pb-10' : '' }} relative">
                                 @if ($step['status'] === 'complete')
                                 @if ($stepIdx !== count($steps) - 1)
-                                <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-[#8E5D0B]"
+                                <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-[#DA0000]"
                                     aria-hidden="true">
 
                                 </div>
@@ -169,7 +169,7 @@
                                 <a href="{{ $step['href'] }}" class="group relative flex items-start">
                                     <span class="flex h-9 items-center">
                                         <span
-                                            class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#8E5D0B]">
+                                            class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#DA0000]">
                                             <img src='assets/images/check.svg' class="w-5" />
                                         </span>
                                     </span>
@@ -185,13 +185,13 @@
                                 @elseif ($step['status'] === 'current')
 
                                 @if ($stepIdx !== count($steps) - 1)
-                                <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-[#626262]"
+                                <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-[#DA0000]"
                                     aria-hidden="true"></div>
                                 @endif
                                 <a href="{{ $step['href'] }}" class="group relative flex items-start">
                                     <span class="flex h-9 items-center">
                                         <span
-                                            class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#8E5D0B]">
+                                            class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#DA0000]">
                                             2
                                         </span>
                                     </span>
@@ -207,13 +207,13 @@
                                 @else
 
                                 @if ($stepIdx !== count($steps) - 1)
-                                <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-[#626262]"
+                                <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-[#DA0000]"
                                     aria-hidden="true"></div>
                                 @endif
                                 <a href="{{ $step['href'] }}" class="group relative flex items-start">
                                     <span class="flex h-9 items-center">
                                         <span
-                                            class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#626262]">
+                                            class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#DA0000]">
                                             3
                                         </span>
                                     </span>
@@ -245,7 +245,7 @@
                         <p class='font-sans font-normal text-xs text-[#FFFFFF]'>A short details for company type. </p>
 
                     </div>
-                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
+                    <div class="bg-[#DA0000] mt-6 p-6 rounded-xl">
                         <p class="font-sans text-lg font-bold text-white mb-4">
                             Setup Service
                         </p>
@@ -319,7 +319,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
+                    <div class="bg-[#DA0000] mt-6 p-6 rounded-xl">
                         <div class="flex items-center justify-between mb-4">
                             <p class="font-sans text-lg font-bold text-[#5white">
                                 Recommended Services
@@ -345,7 +345,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
+                    <div class="bg-[#DA0000] mt-6 p-6 rounded-xl">
                         <div class="flex items-center justify-between">
                             <p class="font-sans text-lg font-bold text-[#5white">
                                 Processing Time
@@ -387,7 +387,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
+                    <div class="bg-[#DA0000] mt-6 p-6 rounded-xl">
                         <div class="flex items-center justify-between"></div>
                         <div class="grid grid-cols-2 gap-4">
                             <div class="flex flex-col space-y-1">
@@ -417,7 +417,7 @@
 {{--                    <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Company & Owner Details</p>--}}
 {{--                    <p class='font-sans font-normal text-xs text-[#FFFFFF]'>A short details for company type. </p>--}}
 
-{{--                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">--}}
+{{--                    <div class="bg-[#DA0000] mt-6 p-6 rounded-xl">--}}
 {{--                        <div class="grid grid-cols-2 gap-x-10 gap-y-4">--}}
 {{--                            <div class="flex flex-col space-y-1">--}}
 {{--                                <label class="font-sans text-sm font-normal text-[#606266]">--}}
@@ -443,7 +443,7 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
 
-{{--                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">--}}
+{{--                    <div class="bg-[#DA0000] mt-6 p-6 rounded-xl">--}}
 {{--                        <div class="flex items-center justify-between mb-4">--}}
 {{--                            <div class="flex items-center justify-between w-full">--}}
 {{--                                <p class="font-sans text-lg font-bold text-[#5white">--}}
@@ -494,7 +494,7 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
 
-{{--                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">--}}
+{{--                    <div class="bg-[#DA0000] mt-6 p-6 rounded-xl">--}}
 {{--                        <div class="flex items-center justify-between mb-4">--}}
 {{--                            <div class="flex items-center justify-between w-full">--}}
 {{--                                <p class="font-sans text-lg font-bold text-[#5white">--}}
@@ -542,7 +542,7 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
 
-{{--                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">--}}
+{{--                    <div class="bg-[#DA0000] mt-6 p-6 rounded-xl">--}}
 {{--                        <div class="flex items-center justify-between mb-4">--}}
 {{--                            <div class="flex items-center justify-between w-full">--}}
 {{--                                <p class="font-sans text-lg font-bold text-[#5white">--}}
@@ -618,7 +618,7 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
 
-{{--                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">--}}
+{{--                    <div class="bg-[#DA0000] mt-6 p-6 rounded-xl">--}}
 {{--                        <div class="flex items-center justify-between mb-4">--}}
 {{--                            <div class="flex items-center justify-between w-full">--}}
 {{--                                <p class="font-sans text-lg font-bold text-[#5white">--}}
@@ -642,7 +642,7 @@
 {{--                <div class="w-3/5 bg-white py-14 px-20  shadow-md bg-cover bg-center h-full"--}}
 {{--                    style="background-image: url('assets/images/MainSectionBgImage.png');">--}}
 {{--                    <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Step:1</p>--}}
-{{--                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">--}}
+{{--                    <div class="bg-[#DA0000] mt-6 p-6 rounded-xl">--}}
 {{--                        <div class="grid grid-cols-12 gap-5">--}}
 {{--                            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">--}}
 {{--                                <p class='font-sans font-medium text-[10px] text-[#343434]'>Type of Service:</p>--}}
@@ -684,7 +684,7 @@
 {{--                    </div>--}}
 
 {{--                    <p class='font-sans font-semibold text-[28px] text-[#C8C8C8] mt-4'>Step:2</p>--}}
-{{--                    <div class="bg-[#626262] mt-6 p-6 rounded-xl">--}}
+{{--                    <div class="bg-[#DA0000] mt-6 p-6 rounded-xl">--}}
 
 {{--                        <div class="grid grid-cols-12 gap-5">--}}
 {{--                            <div class="col-span-3 bg-[#F6F6F699] rounded-md p-4">--}}
@@ -810,7 +810,7 @@
 {{--                <div class="w-3/5 bg-white py-14 px-20  shadow-md bg-cover bg-center h-full"--}}
 {{--                    style="background-image: url('assets/images/MainSectionBgImage.png');">--}}
 {{--                    <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Payment</p>--}}
-{{--                    <div class="bg-[#626262] mt-6 mb-6 p-6 rounded-xl">--}}
+{{--                    <div class="bg-[#DA0000] mt-6 mb-6 p-6 rounded-xl">--}}
 {{--                        <p class="text-white text-xl font-medium mb-4">Select your payment method</p>--}}
 
 {{--                        <div class="flex items-center space-x-20">--}}
@@ -831,7 +831,7 @@
 
 
 
-{{--                    <div class="bg-[#626262] mt-6 mb-6 p-6 rounded-xl">--}}
+{{--                    <div class="bg-[#DA0000] mt-6 mb-6 p-6 rounded-xl">--}}
 {{--                        <p class="text-white text-xl font-medium">Card information</p>--}}
 {{--                        <div class="mt-3">--}}
 {{--                            <div class="flex flex-col space-y-1">--}}
@@ -880,7 +880,7 @@
 {{--                <div class="w-3/5 bg-white py-14 px-20  shadow-md bg-cover bg-center h-full"--}}
 {{--                    style="background-image: url('assets/images/MainSectionBgImage.png');">--}}
 {{--                    <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Payment</p>--}}
-{{--                    <div class="bg-[#626262] mt-6 mb-6 p-6 rounded-xl">--}}
+{{--                    <div class="bg-[#DA0000] mt-6 mb-6 p-6 rounded-xl">--}}
 {{--                        <p class="text-white text-xl font-medium mb-4">Select your payment method</p>--}}
 
 {{--                        <div class="flex items-center space-x-20">--}}
@@ -901,7 +901,7 @@
 
 
 
-{{--                    <div class="bg-[#626262] mt-6 mb-6 p-6 rounded-xl">--}}
+{{--                    <div class="bg-[#DA0000] mt-6 mb-6 p-6 rounded-xl">--}}
 {{--                        <p class="text-white text-xl font-medium">Bank Information</p>--}}
 {{--                        <div class="mt-4">--}}
 
@@ -945,7 +945,7 @@
                         <p class="font-sans text-xl font-semibold text-[#292929]">
                             Total pay
                         </p>
-                        <p class="font-sans text-[40px] font-bold text-[#8E5D0B]">
+                        <p class="font-sans text-[40px] font-bold text-[#DA0000]">
                             $700
                         </p>
                         <div class="flex items-center justify-between mt-4  border-b border-[#1A1A1A] pb-1">
@@ -1042,14 +1042,14 @@
                             </button>
 
                             <button type="button"
-                                class="bg-[#8E5D0B] rounded-lg text-white text-sm font-bold py-2 px-8 flex items-center space-x-2">
+                                class="bg-[#DA0000] rounded-lg text-white text-sm font-bold py-2 px-8 flex items-center space-x-2">
                                 <span>Next</span>
                                 <img src='assets/images/right-arrow.svg' alt="Logo" class="" />
 
                             </button>
 
                             <!-- <button type="button"
-                            class="bg-[#8E5D0B] rounded-lg text-white text-sm font-bold py-2 px-8 flex items-center space-x-2">
+                            class="bg-[#DA0000] rounded-lg text-white text-sm font-bold py-2 px-8 flex items-center space-x-2">
                             <span>Proceed</span>
                             <img src='assets/images/right-arrow.svg' alt="Logo" class="" />
 
