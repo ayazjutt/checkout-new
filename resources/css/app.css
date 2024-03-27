@@ -19,3 +19,13 @@ body {
     color: black;
     height: 48px;
 }
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background: #da0000;
+    color: white;
+    border: none;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice button {
+    color: white;
+    border: none;
+}
