@@ -1,11 +1,11 @@
 <div id="step-2-wrapper" style="display: none;">
-    <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Company & Owner Details</p>
-    <p class='font-sans font-normal text-xs text-[#FFFFFF]'>A short details for company type. </p>
+    <p class='font-sans font-semibold text-[28px] text-black'>Company & Owner Details</p>
+    <p class='font-sans font-normal text-xs text-[#7E8299]'>A short details for company type. </p>
 
-    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
+    <div class="bg-white shadow-md mt-6 p-6 rounded-xl">
         <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-4">
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     Proposal Name # 1
                 </label>
                 <input type="text" name="proposalName1" id="proposalName1"
@@ -16,14 +16,14 @@
                 </span>
             </div>
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     Proposal Name # 2
                 </label>
                 <input type="text" name="proposalName2" id="proposalName2"
                        class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
             </div>
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     Proposal Name # 3
                 </label>
                 <input type="text" name="proposalName3" id="proposalName3"
@@ -32,10 +32,10 @@
         </div>
     </div>
 
-    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
+    <div class="bg-white shadow-md mt-6 p-6 rounded-xl">
         <div class="flex items-center justify-between">
             <div class="flex items-center justify-between w-full">
-                <p class="font-sans text-lg font-bold text-[#5white">
+                <p class="font-sans text-lg font-bold text-[#3F4254]">
                     Shareholder Information
                 </p>
             </div>
@@ -45,10 +45,10 @@
 
     </div>
 
-    <div class="bg-[#626262] mt-6 p-6 rounded-xl">
+    <div class="bg-white shadow-md mt-6 p-6 rounded-xl">
         <div class="flex items-center justify-between mb-4">
             <div class="flex items-center justify-between w-full">
-                <p class="font-sans text-lg font-bold text-[#5white">
+                <p class="font-sans text-lg font-bold text-[#3F4254]">
                     Billing Details
                 </p>
             </div>
@@ -56,7 +56,7 @@
 
         <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-4">
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     Full Name
                 </label>
                 <input type="text" name="billing_name" id="billing_name"
@@ -67,7 +67,7 @@
             </div>
 
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     Email Address
                 </label>
                 <input type="text" name="billing_email" id="billing_email"
@@ -78,7 +78,7 @@
             </div>
 
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     Personal Number
                 </label>
                 <input type="text" name="billing_personal_number" id="billing_personal_number"
@@ -89,7 +89,7 @@
             </div>
 
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     Address 1
                 </label>
                 <input type="text" name="billing_address1" id="billing_address1"
@@ -100,7 +100,7 @@
             </div>
 
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     Address 2
                 </label>
                 <input type="text" name="billing_address2" id="billing_address2"
@@ -108,7 +108,7 @@
             </div>
 
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     Country
                 </label>
                 <input type="text" name="billing_country" id="billing_country"
@@ -119,7 +119,7 @@
             </div>
 
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     State
                 </label>
                 <input type="text" name="billing_state" id="billing_state"
@@ -130,7 +130,7 @@
             </div>
 
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     City
                 </label>
                 <input type="text" name="billing_city" id="billing_city"
@@ -141,7 +141,7 @@
             </div>
 
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     Zip Code
                 </label>
                 <input type="text" name="billing_zipcode" id="billing_zipcode"
@@ -153,10 +153,10 @@
         </div>
     </div>
 
-{{--    <div class="bg-[#626262] mt-6 p-6 rounded-xl">--}}
+{{--    <div class="bg-white shadow-md mt-6 p-6 rounded-xl">--}}
 {{--        <div class="flex items-center justify-between mb-4">--}}
 {{--            <div class="flex items-center justify-between w-full">--}}
-{{--                <p class="font-sans text-lg font-bold text-[#5white">--}}
+{{--                <p class="font-sans text-lg font-bold text-[#3F4254]">--}}
 {{--                    Special Request--}}
 {{--                </p>--}}
 {{--            </div>--}}

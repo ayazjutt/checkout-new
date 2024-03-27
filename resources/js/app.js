@@ -636,8 +636,8 @@ function reapplyJavaScript() {
 
     function renderStepProgressHandler(currentStep) {
         let previousStep = currentStep - 1;
-        $("#progress-step-" + previousStep).removeClass('bg-gray-200 text-[#DA0000] border-[#8E5D0B] border-2 font-bold').addClass('bg-[#DA0000] completed text-white')
-        $("#progress-step-" + currentStep).addClass('bg-gray-200 text-[#DA0000] border-[#DA0000] border-2 font-bold current').removeClass('bg-[#8E5D0B]').closest('a').removeClass('cursor-not-allowed')
+        $("#progress-step-" + previousStep).removeClass('bg-gray-200 text-[#DA0000] border-[#8E5D0B] border-2 font-bold').addClass('bg-[#DA0000] completed text-white border-2')
+        $("#progress-step-" + currentStep).addClass('bg-gray-200 text-[#DA0000] border-[#DA0000] border-2 font-bold current').removeClass('bg-[#8E5D0B] bg-white').closest('a').removeClass('cursor-not-allowed')
 
         // Mobile view progress
         $("#progress-step-" + previousStep +'-mobile').addClass('bg-[#DA0000] completed')

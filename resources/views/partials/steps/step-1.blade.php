@@ -1,16 +1,16 @@
 <div id="step-1-wrapper">
     <div>
-        <p class='font-sans font-semibold text-[28px] text-[#C8C8C8]'>Company Type</p>
-        <p class='font-sans font-normal text-xs text-[#FFFFFF]'>A short details for company type. </p>
+        <p class='font-sans font-semibold text-[28px] text-black'>Company Type</p>
+        <p class='font-sans font-normal text-xs text-[#7E8299]'>A short details for company type. </p>
     </div>
-    <div class="bg-[#626262] mt-6 lg:p-6 p-4 rounded-xl">
-        <p class="font-sans text-lg font-bold text-white mb-4">
+    <div class="bg-white mt-6 lg:p-6 p-4 rounded-xl">
+        <p class="font-sans text-lg font-bold text-[#3F4254] mb-4">
             Setup Service
         </p>
         <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-4">
 
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     Jurisdiction of incorporation
                 </label>
                 <div class="selectWrapper">
@@ -32,7 +32,7 @@
             </div>
             @if(!empty($states))
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     State
                 </label>
                 <div class="selectWrapper">
@@ -56,7 +56,7 @@
 
             @if(!empty($services))
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     Type of service
                 </label>
                 <div class="selectWrapper">
@@ -82,7 +82,7 @@
 
             @if(count($service_types))
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     Corporation Type
                 </label>
                 <div class="selectWrapper">
@@ -104,7 +104,7 @@
             @endif
 
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     Number of Shareholders
                 </label>
                 <input type="number" name="number_of_shareholders" id="numberOfShareholders" value="1"
@@ -119,20 +119,20 @@
     </div>
 
     @if(!empty($country->additional_services))
-    <div class="bg-[#626262] mt-6 lg:p-6 p-4 rounded-xl">
+    <div class="bg-white mt-6 lg:p-6 p-4 rounded-xl">
         <div class="flex items-center justify-between mb-4">
-            <p class="font-sans text-lg font-bold text-[#5white">
+            <p class="font-sans text-lg font-bold text-[#3F4254]">
                 Recommended Services (Optional)
             </p>
         </div>
 
         <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
             <div class="flex flex-col space-y-1">
-                <label class="font-sans text-sm font-normal">
+                <label class="font-sans text-sm font-normal text-[#3F4254]">
                     Extra services
                 </label>
                 <div class="selectWrapper">
-                    <select class="selectBox bg-[#FFFFFF99] text-black" multiple id="additionalServicesDropdown">
+                    <select class="selectBox bg-[#FFFFFF99] text-[#3F4254]" multiple id="additionalServicesDropdown">
                         @foreach($country->additional_services as $additional_service)
                         <option value="{{ $additional_service->id }}">{{ $additional_service->name }}</option>
                         @endforeach
@@ -144,9 +144,9 @@
     </div>
     @endif
 
-    <div class="bg-[#626262] mt-6 lg:p-6 p-4 rounded-xl">
+    <div class="bg-white mt-6 lg:p-6 p-4 rounded-xl">
         <div class="flex items-center justify-between">
-            <p class="font-sans text-lg font-bold text-[#5white">
+            <p class="font-sans text-lg font-bold text-[#3F4254]">
                 Processing Time
             </p>
         </div>
@@ -159,16 +159,16 @@
                     value="{{ $processing_type->id }}"
                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 processing-type-radio"
                     data-amount="{{ $processing_type->amount }}" />
-                    <label for="processingType{{ $processing_type->id }}" class="cursor-pointer font-semibold text-white text-base ml-3">
+                    <label for="processingType{{ $processing_type->id }}" class="cursor-pointer font-semibold text-[#3F4254] text-base ml-3" text-base ml-3">
                         {{ $processing_type->name }}
                     </label>
             </div>
-                <span class="text-white font-bold text-base">${{ $processing_type->amount }}</span>
+                <span class="text-[#3F4254] font-bold text-base">${{ $processing_type->amount }}</span>
         </div>
         @endforeach
     </div>
 
-{{--    <div class="bg-[#626262] mt-6 lg:p-6 p-4 rounded-xl">--}}
+{{--    <div class="bg-white mt-6 lg:p-6 p-4 rounded-xl">--}}
 {{--        <div class="flex items-center justify-between">--}}
 {{--            <p class="font-sans text-lg font-medium text-white">--}}
 {{--                How did you know about us?--}}
@@ -176,7 +176,7 @@
 {{--        </div>--}}
 {{--        <div class="mt-4">--}}
 {{--            <div class="flex flex-col space-y-1">--}}
-{{--                <label class="font-sans text-sm font-normal">--}}
+{{--                <label class="font-sans text-sm font-normal text-[#3F4254]">--}}
 
 {{--                </label>--}}
 {{--                <div class="selectWrapper">--}}

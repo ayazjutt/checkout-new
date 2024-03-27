@@ -66,7 +66,7 @@
 
 </head>
 
-<body class="antialiased relative">
+<body class="antialiased relative bg-[#f5f8fa]">
 @if(!empty($country))
     <script>
         var additionalServicesData = <?php echo json_encode($country->additional_services); ?>;
