@@ -77,7 +77,7 @@ function reapplyJavaScript() {
                 var responseString = response.toString();
 
                 // Find the index of the start and end of the body content
-                var startIndex = responseString.indexOf('<body class="antialiased relative">');
+                var startIndex = responseString.indexOf('<body class="antialiased relative bg-[#f5f8fa]">');
                 var endIndex = responseString.indexOf('</body>');
 
                 // Extract the body content
@@ -808,7 +808,11 @@ function reapplyJavaScript() {
                 currentStep = currentStep - 1;
                 renderStepHandler(currentStep)
                 $('select').select2();
+
+                if (currentStep < 4) $(".next").text('Next').removeClass('place-order');
             }
+
+            if (currentStep === 1) $("#back").hide();
         });
 
         $(document).on('click', '.remove-beneficial-owner', function () {
