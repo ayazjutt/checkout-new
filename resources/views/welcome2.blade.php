@@ -86,8 +86,8 @@
         @include('partials.steps.step-5')
     </div>
 
-    <div style="background-image: url('assets/images/mobile-header-bg.png');" id="form_area"
-        class="bg-cover bg-no-repeat bg-center h-full">
+    <div  id="form_area"
+        class="bg-cover bg-no-repeat bg-center h-full bg-[#f5f8fa]">
         <div class="flex items-center justify-center pt-8 w-full lg:hidden">
             <img src='assets/images/logo.png' alt="Logo" class="w-20" />
         </div>
@@ -98,9 +98,9 @@
                     <li class="relative pr-14 sm:pr-20">
                         <!-- Completed Step -->
                         <div class="absolute inset-0 flex items-center" aria-hidden="true">
-                            <div class="h-0.5 w-full bg-[#8E5D0B]"></div>
+                            <div class="h-0.5 w-full bg-[#DA0000]"></div>
                         </div>
-                        <a href="#" data-step="1" id="progress-step-1-mobile" class="relative flex h-8 w-8 items-center justify-center rounded-full bg-[#8E5D0B]">
+                        <a href="#" data-step="1" id="progress-step-1-mobile" class="relative flex h-8 w-8 items-center justify-center rounded-full bg-[#DA0000]">
                             <span class="text-white">1</span>
                             <span class="sr-only">Step 1</span>
                             <span class="absolute top-8 text-[#191919]">Type</span>
@@ -153,8 +153,8 @@
             @include('partials.left-side-bar')
 
             {{--  Form Area  --}}
-            <div class="lg:col-span-6 col-span-12 lg:py-8 pb-0 lg:px-20 px-4 shadow-md bg-cover bg-center text-white h-auto"
-                style="background-image: url('assets/images/MainSectionBgImage.png');">
+            <div class="lg:col-span-6 col-span-12 lg:py-8 pb-0 lg:px-20 px-4 bg-cover bg-center text-white h-auto"
+            >
                 {{--  Step 1  --}}
                 @include('partials.steps.step-1')
 
@@ -174,14 +174,14 @@
         </div>
         <div class="lg:hidden block sticky bottom-0 z-10 h-36 bg-white text-black w-full rounded-tl-2xl rounded-tr-2xl" id="bottomDiv">
             <div class="w-full flex items-center justify-center mobile-summary">
-                <div class="h-1 bg-[#8E5D0B] w-40 my-2 rounded"></div>
+                <div class="h-1 bg-[#DA0000] w-40 my-2 rounded"></div>
             </div>
     
             <div class="px-4 w-full">
                 <div class="flex items-start justify-between my-4 mobile-summary">
                     <p class="ml-4 font-semibold text-lg text-[#292929]">Total payment</p>
                     <div class="flex flex-col space-y-2">
-                        <p class="font-bold text-3xl text-[#8E5D0B]">
+                        <p class="font-bold text-3xl text-[#DA0000]">
                             $<span class="total_pay_amount_summary">{{ $processing_types[0]->amount + $state_amount }}</span>
                         </p>
                         <p class="font-normal underline text-xs text-[#292929]">View Price Detail</p>
@@ -194,7 +194,7 @@
     
     
     
-                <button type="button" class="w-full h-8 bg-[#8E5D0B] text-white text-center font-semibold text-base rounded-lg next mobile-view">Next</button>
+                <button type="button" class="w-full h-8 bg-[#DA0000] text-white text-center font-semibold text-base rounded-lg next mobile-view">Next</button>
             </div>
     
         </div>

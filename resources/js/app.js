@@ -298,21 +298,21 @@ function reapplyJavaScript() {
             var html = `
             <div class="inline-flex items-center justify-center w-full mb-6 mt-8">
                 <hr class="w-64 h-1 bg-gray-200 border-0 rounded dark:bg-gray-700">
-                <div class="absolute px-4 -translate-x-1/2 bg-[#626262] left-1/2 dark:bg-gray-900">
+                <div class="absolute px-4 -translate-x-1/2 bg-[#DA0000] left-1/2 dark:bg-gray-900">
                     Shareholder # ${i}
                 </div>
             </div>
             <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-4">
                 <div class="flex flex-col space-y-1">
-                    <label class="font-sans text-sm font-normal">Full Name</label>
+                    <label class="font-sans text-sm font-normal text-[#3F4254]">Full Name</label>
                     <input type="text" name="shareholder_name${i}" id="shareholder_name${i}"
-                        class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+                        class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#DA0000] sm:text-sm sm:leading-6"/>
                     <span id="shareholder_name_${i}_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
                         This Field is required!
                     </span>
                 </div>
                 <div class="flex flex-col space-y-1 w-full">
-                    <label class="font-sans text-sm font-normal">Nationality</label>
+                    <label class="font-sans text-sm font-normal text-[#3F4254]">Nationality</label>
                     <div class="selectWrapper">
                         <select class="selectBox h-12 bg-[#FFFFFF99] text-black" id="shareholder_nationality${i}" name="shareholder_nationality${i}"><option></option>`;
             // Loop through countriesAll to generate options
@@ -328,9 +328,9 @@ function reapplyJavaScript() {
                     </div>
                 </div>
                 <div class="flex flex-col space-y-1">
-                    <label class="font-sans text-sm font-normal">Percentage</label>
+                    <label class="font-sans text-sm font-normal text-[#3F4254]">Percentage</label>
                     <input type="number" name="shareholder_percentage${i}" id="shareholder_percentage${i}"
-                        class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+                        class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#DA0000] sm:text-sm sm:leading-6"/>
                         <span id="shareholder_percentage_${i}_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
                             Please enter a valid percentage (between 0 and 100)
                         </span>
@@ -361,18 +361,18 @@ function reapplyJavaScript() {
             <div id="beneficial_owner_${ownerCount}_wrapper">
                 <div class="inline-flex items-center justify-center w-full mb-6 mt-8">
                     <hr class="w-64 h-1 bg-gray-200 border-0 rounded dark:bg-gray-700">
-                    <div class="absolute px-4 -translate-x-1/2 bg-[#626262] left-1/2 dark:bg-gray-900">
+                    <div class="absolute px-4 -translate-x-1/2 bg-[#DA0000] left-1/2 dark:bg-gray-900">
                         Beneficial Owner # ${ownerCount}
                     </div>
                 </div>
 
                 <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-4">
                     <div class="flex flex-col space-y-1">
-                        <label class="font-sans text-sm font-normal">
+                        <label class="font-sans text-sm font-normal text-[#3F4254]">
                             Full Name
                         </label>
                         <input type="text" name="beneficial_name${ownerCount}" id="beneficial_name${ownerCount}"
-                               class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+                               class="block w-full rounded-md bg-[#F6F6F699] border-0 h-12 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#DA0000] sm:text-sm sm:leading-6"/>
 
                         <span id="beneficial_name_${ownerCount}_error_msg" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 error-msg" style="display: none">
                             This Field is required!
@@ -380,7 +380,7 @@ function reapplyJavaScript() {
 
                     </div>
                     <div class="flex flex-col space-y-1">
-                        <label class="font-sans text-sm font-normal">
+                        <label class="font-sans text-sm font-normal text-[#3F4254]">
                             Nationality
                         </label>
                         <div class="flex items-center space-x-4">
@@ -615,16 +615,15 @@ function reapplyJavaScript() {
                 showToast(jqXHR.responseJSON.message, 'Order Failed!', 'error')
             }
         });
-
     }
 
     function renderStepProgressHandler(currentStep) {
         let previousStep = currentStep - 1;
-        $("#progress-step-" + previousStep).removeClass('bg-gray-200 text-[#8E5D0B] border-[#8E5D0B] border-2 font-bold').addClass('bg-[#8E5D0B] completed')
-        $("#progress-step-" + currentStep).addClass('bg-gray-200 text-[#8E5D0B] border-[#8E5D0B] border-2 font-bold current').removeClass('bg-[#8E5D0B]').closest('a').removeClass('cursor-not-allowed')
+        $("#progress-step-" + previousStep).removeClass('bg-gray-200 text-[#DA0000] border-[#8E5D0B] border-2 font-bold').addClass('bg-[#DA0000] completed text-white')
+        $("#progress-step-" + currentStep).addClass('bg-gray-200 text-[#DA0000] border-[#DA0000] border-2 font-bold current').removeClass('bg-[#8E5D0B]').closest('a').removeClass('cursor-not-allowed')
 
         // Mobile view progress
-        $("#progress-step-" + previousStep +'-mobile').addClass('bg-[#8E5D0B] completed')
+        $("#progress-step-" + previousStep +'-mobile').addClass('bg-[#DA0000] completed')
         $("#progress-step-" + currentStep +'-mobile').addClass('bg-[#8E5D0B] current').removeClass('bg-[#D3BEA9] border border-[#C3B09B]').find('span').first().removeClass('text-[#C3B09B]').addClass('text-white')
     }
 
